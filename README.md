@@ -95,7 +95,7 @@ Don't forget to set the state variable you have given to _isLoading_ prop false 
     * For more details about these properties, refer [react-native-indicators](https://github.com/n4kz/react-native-indicators)
 
 ## Example
-  A full working example project is here [react-native-spinner-button-demo](https://github.com/rupalpatel0008/react-native-spinner-button-demo)
+  A full working example project is here [Example](https://github.com/simformsolutions/react-native-spinner-button/Example)
 
 ## Acknowledgments and Big Thanks to
 * [react-native-indicators](https://github.com/n4kz/react-native-indicators)
