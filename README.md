@@ -18,7 +18,7 @@ By default it will render a Button and you have to pass a boolean _isLoading_ pr
 ## Getting Started
 
 ```bash
-npm i https://github.com/rupalpatel0008/react-native-spinner-button
+npm i https://github.com/simformsolutions/react-native-spinner-button --save
 ```
 
 ## Usage
