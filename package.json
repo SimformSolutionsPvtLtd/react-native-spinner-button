@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rupalpatel0008/react-native-spinner-button.git"
+    "url": "git+https://github.com/simformsolutions/react-native-spinner-button.git"
   },
   "keywords": [
     "react-native-spinner-button",
@@ -25,9 +25,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rupalpatel0008/react-native-spinner-button/issues"
+    "url": "https://github.com/simformsolutions/react-native-spinner-button/issues"
   },
-  "homepage": "https://github.com/rupalpatel0008/react-native-spinner-button#readme",
+  "homepage": "https://github.com/simformsolutions/react-native-spinner-button#readme",
   "dependencies": {
     "react-native-animatable": "^1.3.0",
     "react-native-indicators": "^0.13.0",
