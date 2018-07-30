@@ -1,0 +1,39 @@
+{
+  "name": "react-native-spinner-button",
+  "version": "1.0.0",
+  "description": "This is a react-native button component with a spinner. You can load a spinner or a button from the same component depending on a flag. for eg, you have a button. And on press of that button you are doing something and wants the user to show a spinner, all you have to do is use this component. You can pass along a boolean flag. The component will render a spinner if the flag is true and button if the flag is false.",
+  "author": "Rupal Patel <rupalpatel0008@gmail.com>",
+  "main": "./components/SpinnerButton.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rupalpatel0008/react-native-spinner-button.git"
+  },
+  "keywords": [
+    "react-native-spinner-button",
+    "react-native-spinner",
+    "react-native-button",
+    "react-native button with spinner",
+    "react-native button with loader",
+    "react-native button with activityindicator",
+    "react-native-loader",
+    "spinner",
+    "button",
+    "loader"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rupalpatel0008/react-native-spinner-button/issues"
+  },
+  "homepage": "https://github.com/rupalpatel0008/react-native-spinner-button#readme",
+  "dependencies": {
+    "react-native-animatable": "^1.3.0",
+    "react-native-indicators": "^0.13.0",
+    "babel-jest": "23.0.1",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "23.1.0",
+    "react-test-renderer": "16.3.1"
+  }
+}
