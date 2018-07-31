@@ -1,4 +1,4 @@
-# react-native-spinner-button
+# react-native-spinner-button [![npm version](https://badge.fury.io/js/react-native-spinner-button.svg)](https://badge.fury.io/js/react-native-spinner-button)
 This is a pure javascript and react-native Button component with a Spinner embeded in it.
 In many of the react-native projects we have worked on required the button to be disabled when app is processing something on tap of that button, and a loading indicator on it or beside it, so the user can be made aware of app doing some processing.
 
@@ -96,6 +96,7 @@ Don't forget to set the state variable you have given to _isLoading_ prop false 
 
 ## Example
   A full working example project is here [Example](https://github.com/simformsolutions/react-native-spinner-button/tree/master/Example)
+  ![Example of react-native-spinner-button](https://github.com/simformsolutions/react-native-spinner-button/blob/master/example.gif)
 
 ## Acknowledgments and Big Thanks to
 * [react-native-indicators](https://github.com/n4kz/react-native-indicators)
