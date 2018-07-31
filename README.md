@@ -6,6 +6,8 @@ From a developer perspective, it is very painful to manage two different compone
 
 By default it will render a Button and you have to pass a boolean _isLoading_ prop to it. When the _isLoading_ will be true, it will render a Spinner in place of the Button and once its false, the Button will be rendered back again.
 
+![Example of react-native-spinner-button](https://github.com/simformsolutions/react-native-spinner-button/blob/master/example.gif)
+
 ## Features
 * Drop in replacement for a button and indicator combo
 * Very easy to use
@@ -96,7 +98,6 @@ Don't forget to set the state variable you have given to _isLoading_ prop false 
 
 ## Example
   A full working example project is here [Example](https://github.com/simformsolutions/react-native-spinner-button/tree/master/Example)
-  ![Example of react-native-spinner-button](https://github.com/simformsolutions/react-native-spinner-button/blob/master/example.gif)
 
 ## Acknowledgments and Big Thanks to
 * [react-native-indicators](https://github.com/n4kz/react-native-indicators)
