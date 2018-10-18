@@ -1,10 +1,12 @@
-# react-native-spinner-button
+# react-native-spinner-button [![npm version](https://badge.fury.io/js/react-native-spinner-button.svg)](https://badge.fury.io/js/react-native-spinner-button)
 This is a pure javascript and react-native Button component with a Spinner embeded in it.
-In many of the react-native projects I have worked on required the button to be disabled when app is processing something on tap of that button, and a loading indicator on it or beside it, so the user can be made aware of app doing some processing.
+In many of the react-native projects we have worked on required the button to be disabled when app is processing something on tap of that button, and a loading indicator on it or beside it, so the user can be made aware of app doing some processing.
 
-From a developer perspective, it is very painful to manage two different components: a button and a spinner for lots of buttons! So when I came accross this beautiful component [SSspinnerButton](https://github.com/simformsolutions/SSSpinnerButton), I decided to do something like that in react-native.
+From a developer perspective, it is very painful to manage two different components: a button and a spinner for lots of buttons! So when we came accross this beautiful component [SSspinnerButton](https://github.com/simformsolutions/SSSpinnerButton), we decided to do something like that in react-native.
 
 By default it will render a Button and you have to pass a boolean _isLoading_ prop to it. When the _isLoading_ will be true, it will render a Spinner in place of the Button and once its false, the Button will be rendered back again.
+
+![Example of react-native-spinner-button](https://github.com/simformsolutions/react-native-spinner-button/blob/master/example.gif)
 
 ## Features
 * Drop in replacement for a button and indicator combo
@@ -18,7 +20,7 @@ By default it will render a Button and you have to pass a boolean _isLoading_ pr
 ## Getting Started
 
 ```bash
-npm i https://github.com/simformsolutions/react-native-spinner-button --save
+npm i react-native-spinner-button --save
 ```
 
 ## Usage
@@ -95,7 +97,7 @@ Don't forget to set the state variable you have given to _isLoading_ prop false 
     * For more details about these properties, refer [react-native-indicators](https://github.com/n4kz/react-native-indicators)
 
 ## Example
-  A full working example project is here [react-native-spinner-button-demo](https://github.com/rupalpatel0008/react-native-spinner-button-demo)
+  A full working example project is here [Example](https://github.com/simformsolutions/react-native-spinner-button/tree/master/Example)
 
 ## Acknowledgments and Big Thanks to
 * [react-native-indicators](https://github.com/n4kz/react-native-indicators)
