@@ -20,15 +20,29 @@ function getSpinnerBackgroundStyle (spinnerType, customButtonStyle, defaultButto
   let width = height;
   let backgroundColor = customButtonStyle.backgroundColor ? customButtonStyle.backgroundColor : defaultButtonStyle.backgroundColor;
   let margin = customButtonStyle.margin ? customButtonStyle.margin : defaultButtonStyle.margin;
+  let marginTop = customButtonStyle.marginTop ? customButtonStyle.marginTop : defaultButtonStyle.margin;
+  let marginBottom = customButtonStyle.marginBottom ? customButtonStyle.marginBottom : defaultButtonStyle.margin;
+  let marginLeft = customButtonStyle.marginLeft ? customButtonStyle.marginLeft : defaultButtonStyle.margin;
+  let marginRight = customButtonStyle.marginRight ? customButtonStyle.marginRight : defaultButtonStyle.margin;
+  let marginVertical = customButtonStyle.marginVertical ? customButtonStyle.marginVertical : defaultButtonStyle.margin;
+  let marginHorizontal = customButtonStyle.marginHorizontal ? customButtonStyle.marginHorizontal : defaultButtonStyle.margin;
   let customSpinnerStyle = {
     height,
     width,
     backgroundColor,
     margin,
+    marginVertical,
+    marginHorizontal,
+    marginTop,
+    marginBottom,
+    marginLeft,
+    marginRight,
     borderRadius,
     justifyContent: 'center',
     alignItems: 'center',
   };
+  console.log('customButtonStyle = ', customButtonStyle)
+  console.log('customSpinnerStyle = ', customSpinnerStyle)
   switch (spinnerType) {
     case 'BallIndicator':
       return customSpinnerStyle;
@@ -108,76 +122,91 @@ const SpinnerComponent = (props) => {
   let customButtonStyle = StyleSheet.flatten(buttonStyle);
   let defaultButtonStyle = StyleSheet.flatten(styles.defaultButtonStyle);
   let height = customButtonStyle.height ? customButtonStyle.height : defaultButtonStyle.height;
+  let width = customButtonStyle.width ? customButtonStyle.width : defaultButtonStyle.width;
   let customSpinnerStyle = getSpinnerBackgroundStyle(spinnerType, customButtonStyle, defaultButtonStyle, spinnerOptions);
   switch (spinnerType) {
     case 'BallIndicator':
       return (
-        <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
-          <BallIndicator
-            color={spinnerColor || 'rgb(255, 255, 255)'}
-            count={indicatorCount}
-            size={height - 20}
-          />
-        </Animatable.View>
+        <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
+          <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
+            <BallIndicator
+              color={spinnerColor || 'rgb(255, 255, 255)'}
+              count={indicatorCount}
+              size={height - 20}
+            />
+          </Animatable.View>
+        </View>
       );
     case 'BarIndicator':
       return (
-        <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
-          <BarIndicator
-            color={spinnerColor || 'rgb(255, 255, 255)'}
-            count={indicatorCount}
-            size={height - 10}
-          />
-        </Animatable.View>
+        <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
+          <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
+            <BarIndicator
+              color={spinnerColor || 'rgb(255, 255, 255)'}
+              count={indicatorCount}
+              size={height - 10}
+            />
+          </Animatable.View>
+        </View>
       );
     case 'DotIndicator':
       return (
-        <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
-          <DotIndicator
-            color={spinnerColor || 'rgb(255, 255, 255)'}
-            count={indicatorCount}
-            size={size}
-          />
-        </Animatable.View>
+        <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
+          <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
+            <DotIndicator
+              color={spinnerColor || 'rgb(255, 255, 255)'}
+              count={indicatorCount}
+              size={size}
+            />
+          </Animatable.View>
+        </View>
       );
     case 'MaterialIndicator':
       // Note: To overcome https://github.com/n4kz/react-native-indicators/issues/11 and 
       //   https://github.com/n4kz/react-native-indicators/issues/6 ActivityIndicator is used in android
       if (Platform.OS === 'android') {
         return (
+          <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
+            <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
+              <ActivityIndicator
+                color={spinnerColor || 'rgb(255, 255, 255)'}
+                size={height - 10}
+              />
+            </Animatable.View>
+          </View>
+        );
+      }
+      return (
+        <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
           <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
-            <ActivityIndicator
+            <MaterialIndicator
               color={spinnerColor || 'rgb(255, 255, 255)'}
               size={height - 10}
             />
           </Animatable.View>
+        </View>
         );
-      }
-      return (
-        <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
-          <MaterialIndicator
-            color={spinnerColor || 'rgb(255, 255, 255)'}
-            size={height - 10}
-          />
-        </Animatable.View>
-      );
     case 'PacmanIndicator':
       return (
-        <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
-          <PacmanIndicator
-            color={spinnerColor || 'rgb(255, 255, 255)'}
-            size={height - 10}
-          />
-        </Animatable.View>
+        <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
+          <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
+            <PacmanIndicator
+              color={spinnerColor || 'rgb(255, 255, 255)'}
+              size={height - 10}
+            />
+          </Animatable.View>
+        </View>
       );
     case 'PulseIndicator':
       return (
-        <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
-          <PulseIndicator
-            color={spinnerColor || 'rgb(255, 255, 255)'}
-            size={height}
-          />
-        </Animatable.View>
+        <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
+          <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
+            <PulseIndicator
+              color={spinnerColor || 'rgb(255, 255, 255)'}
+              size={height}
+            />
+          </Animatable.View>
+        </View>
       );
     case 'SkypeIndicator':
       let minScale = 0.2;
@@ -189,26 +218,30 @@ const SpinnerComponent = (props) => {
         maxScale = spinnerOptions.maxScale;
       }
       return (
-        <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
-          <SkypeIndicator
-            color={spinnerColor || 'rgb(255, 255, 255)'}
-            count={indicatorCount}
-            // size={height - (10 * spinnerOptions.maxScale)}
-            size={height - 10}
-            // minScale={minScale}
-            // maxScale={maxScale}
-          />
-        </Animatable.View>
+        <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
+          <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
+            <SkypeIndicator
+              color={spinnerColor || 'rgb(255, 255, 255)'}
+              count={indicatorCount}
+              // size={height - (10 * spinnerOptions.maxScale)}
+              size={height - 10}
+              // minScale={minScale}
+              // maxScale={maxScale}
+            />
+          </Animatable.View>
+        </View>
       );
     case 'UIActivityIndicator':
       return (
-        <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
-          <UIActivityIndicator
-            color={spinnerColor || 'rgb(255, 255, 255)'}
-            count={indicatorCount}
-            size={height - 10}
-          />
-        </Animatable.View>
+        <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
+          <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
+            <UIActivityIndicator
+              color={spinnerColor || 'rgb(255, 255, 255)'}
+              count={indicatorCount}
+              size={height - 10}
+            />
+          </Animatable.View>
+        </View>
       );
     case 'WaveIndicator':
       let waveFactor = 0.54;
@@ -220,25 +253,29 @@ const SpinnerComponent = (props) => {
         waveMode = spinnerOptions.waveMode;
       }
       return (
-        <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
-          <WaveIndicator
-            color={spinnerColor || 'rgb(255, 255, 255)'}
-            count={indicatorCount}
-            size={height - 10}
-            waveFactor={waveFactor}
-            waveMode={waveMode}
-          />
-        </Animatable.View>
+        <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
+          <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
+            <WaveIndicator
+              color={spinnerColor || 'rgb(255, 255, 255)'}
+              count={indicatorCount}
+              size={height - 10}
+              waveFactor={waveFactor}
+              waveMode={waveMode}
+            />
+          </Animatable.View>
+        </View>
       );
     default:
       return (
-        <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
-          <BallIndicator
-            color={spinnerColor || 'rgb(255, 255, 255)'}
-            count={indicatorCount}
-            size={height - 20}
-          />
-        </Animatable.View>
+        <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
+          <Animatable.View animation={animationType || 'fadeIn'} style={[styles.defaultSpinnerContainerStyle, customSpinnerStyle]}>
+            <BallIndicator
+              color={spinnerColor || 'rgb(255, 255, 255)'}
+              count={indicatorCount}
+              size={height - 20}
+            />
+          </Animatable.View>
+        </View>
       );
   }
 }
