@@ -14,7 +14,7 @@ import {
 import * as Animatable from 'react-native-animatable';
 import styles from './styles/SpinnerButtonStyle';
 
-function getSpinnerBackgroundStyle (spinnerType, customButtonStyle, defaultButtonStyle, spinnerOptions) {
+function getSpinnerBackgroundStyle(spinnerType, customButtonStyle, defaultButtonStyle, spinnerOptions) {
   const borderRadius = customButtonStyle.height ? customButtonStyle.height / 2 : defaultButtonStyle.height / 2;
   let height = customButtonStyle.height ? customButtonStyle.height : defaultButtonStyle.height;
   let width = height;
@@ -41,8 +41,7 @@ function getSpinnerBackgroundStyle (spinnerType, customButtonStyle, defaultButto
     justifyContent: 'center',
     alignItems: 'center',
   };
-  console.log('customButtonStyle = ', customButtonStyle)
-  console.log('customSpinnerStyle = ', customSpinnerStyle)
+
   switch (spinnerType) {
     case 'BallIndicator':
       return customSpinnerStyle;
@@ -185,7 +184,7 @@ const SpinnerComponent = (props) => {
             />
           </Animatable.View>
         </View>
-        );
+      );
     case 'PacmanIndicator':
       return (
         <View style={{ width: width, alignItems: 'center', justifyContent: 'center' }}>
@@ -210,7 +209,7 @@ const SpinnerComponent = (props) => {
       );
     case 'SkypeIndicator':
       let minScale = 0.2;
-      let maxScale = 1.0;  
+      let maxScale = 1.0;
       if (spinnerOptions !== undefined && spinnerOptions.minScale !== undefined) {
         minScale = spinnerOptions.minScale;
       }
@@ -225,8 +224,8 @@ const SpinnerComponent = (props) => {
               count={indicatorCount}
               // size={height - (10 * spinnerOptions.maxScale)}
               size={height - 10}
-              // minScale={minScale}
-              // maxScale={maxScale}
+            // minScale={minScale}
+            // maxScale={maxScale}
             />
           </Animatable.View>
         </View>
