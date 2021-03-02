@@ -1,3 +1,5 @@
 {
-  "presets": ["react-native"]
+  "plugins": [
+    ["transform-class-properties", { "spec": true }]
+  ]
 }

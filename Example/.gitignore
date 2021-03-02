@@ -39,7 +39,6 @@ yarn-error.log
 # BUCK
 buck-out/
 \.buckd/
-*.keystore
 
 # fastlane
 #
@@ -54,3 +53,19 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+
+# CocoaPods
+/ios/Pods/
+android/.project
+android/.settings/org.eclipse.buildship.core.prefs
+android/app/.classpath
+android/app/.project
+android/app/.settings/org.eclipse.buildship.core.prefs
+android/java_pid28385.hprof
+android/java_pid35054.hprof
+android/java_pid40495.hprof
+android/java_pid44292.hprof
+android/java_pid50139.hprof
+android/app/release/app-release.apk
+android/app/release/output.json
+ios/link-assets-manifest.json
