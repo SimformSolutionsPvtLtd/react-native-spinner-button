@@ -1,7 +1,9 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 const DEFAULT_COLOR_WHITE = 'rgb(255, 255, 255)';
 const DEFAULT_ANIMATION_TYPE = 'fadeIn';
+
+const windowWidth = Dimensions.get('window').width;
 
 const getSpinnerBackgroundStyle = (spinnerType, customButtonStyle, defaultButtonStyle) => {
   const borderRadius = customButtonStyle.height ? customButtonStyle.height / 2 : defaultButtonStyle.height / 2;
@@ -16,7 +18,7 @@ const getSpinnerBackgroundStyle = (spinnerType, customButtonStyle, defaultButton
   const marginVertical = customButtonStyle.marginVertical ? customButtonStyle.marginVertical : defaultButtonStyle.margin;
   const marginHorizontal = customButtonStyle.marginHorizontal ? customButtonStyle.marginHorizontal : defaultButtonStyle.margin;
   
-  if (spinnerType === 'PacmanIndicator') {
+  if (spinnerType?.trim()?.toLowerCase() === 'pacmanindicator') {
     return {
         height,
         width: height * 2,
@@ -26,7 +28,7 @@ const getSpinnerBackgroundStyle = (spinnerType, customButtonStyle, defaultButton
         justifyContent: 'center',
         alignItems: 'center',
     };
-  } else if (spinnerType === 'BarIndicator' || spinnerType === 'DotIndicator') {
+  } else if (spinnerType?.trim()?.toLowerCase() === 'barindicator' || spinnerType?.trim()?.toLowerCase() === 'dotindicator') {
     return {
         height,
         paddingHorizontal: 10,
@@ -77,6 +79,7 @@ const getWaveFactorAndMode = (spinnerOptions) => {
 };
 
 export {
+    windowWidth,
     DEFAULT_COLOR_WHITE,
     DEFAULT_ANIMATION_TYPE,
     getSpinnerStyle,
