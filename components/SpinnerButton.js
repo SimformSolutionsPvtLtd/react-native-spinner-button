@@ -1,36 +1,19 @@
 import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
-import * as Animatable from 'react-native-animatable';
 import Spinner from './Spinner';
-import styles from './styles/SpinnerButtonStyle';
+import CustomButton from './CustomButton';
 
-const CustomButton = (props) => {
-  const { animationType, buttonStyle, onPress, isLoading, children } = props;
-  return (
-    <Animatable.View animation={animationType || 'fadeIn'}>
-      <TouchableOpacity
-        style={[styles.defaultButtonStyle, buttonStyle]}
-        onPress={onPress}
-      >
-        {children}
-      </TouchableOpacity>
-    </Animatable.View>
-  );
-};
-
-const SpinnerButton = (props) => {
-  const {
-    animationType,
-    buttonStyle,
-    spinnerColor,
-    spinnerType,
-    isLoading,
-    onPress,
-    children,
-    indicatorCount,
-    size,
-    spinnerOptions,
-  } = props;
+const SpinnerButton = ({
+  animationType,
+  buttonStyle,
+  spinnerColor,
+  spinnerType,
+  isLoading,
+  onPress,
+  children,
+  indicatorCount,
+  size,
+  spinnerOptions,
+}) => {
   if (isLoading) {
     return (
       <Spinner
@@ -50,7 +33,6 @@ const SpinnerButton = (props) => {
       buttonStyle={buttonStyle}
       onPress={onPress}
       children={children}
-      isLoading={isLoading}
       animationType={animationType}
     />
   );

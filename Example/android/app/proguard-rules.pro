@@ -15,10 +15,26 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+#-dontobfuscate
 
-# Disabling obfuscation is useful if you collect stack traces from production crashes
-# (unless you are using a system that supports de-obfuscate the stack traces).
--dontobfuscate
+# Class names are needed in reflection
+-repackageclasses
+-allowaccessmodification
+-flattenpackagehierarchy
+
+-keepnames class com.amazonaws.**
+-keepnames class com.amazon.**
+-keepclassmembers,allowobfuscation class com.amazon.aws.amazonfreertossdk.**
+# Request handlers defined in request.handlers
+-keep class com.amazonaws.services.**.*Handler
+# The following are referenced but aren't required to run
+-dontwarn com.fasterxml.jackson.**
+-dontwarn org.apache.commons.logging.**
+# Android 6.0 release removes support for the Apache HTTP client
+-dontwarn org.apache.http.**
+# The SDK has several references of Apache HTTP client
+-dontwarn com.amazonaws.http.**
+-dontwarn com.amazonaws.metrics.**
 
 # React Native
 
@@ -44,27 +60,31 @@
 -keep class * extends com.facebook.react.bridge.JavaScriptModule { *; }
 -keep class * extends com.facebook.react.bridge.NativeModule { *; }
 -keepclassmembers,includedescriptorclasses class * { native <methods>; }
--keepclassmembers class *  { @com.facebook.react.uimanager.UIProp <fields>; }
 -keepclassmembers class *  { @com.facebook.react.uimanager.annotations.ReactProp <methods>; }
 -keepclassmembers class *  { @com.facebook.react.uimanager.annotations.ReactPropGroup <methods>; }
 
 -dontwarn com.facebook.react.**
+-keep,includedescriptorclasses class com.facebook.react.bridge.** { *; }
 
-# TextLayoutBuilder uses a non-public Android constructor within StaticLayout.
-# See libs/proxy/src/main/java/com/facebook/fbui/textlayoutbuilder/proxy for details.
--dontwarn android.text.StaticLayout
 
-# okhttp
+# Keep the BuildConfig
+-dontwarn **
+-dontnote **
+#-keep class com.pentair.pentairpro.BuildConfig { *; }
 
--keepattributes Signature
--keepattributes *Annotation*
--keep class okhttp3.** { *; }
--keep interface okhttp3.** { *; }
--dontwarn okhttp3.**
+-keep class com.newrelic.** { *; }
+-dontwarn com.newrelic.**
+-keepattributes Exceptions, Signature, InnerClasses, LineNumberTable
 
-# okio
+# Disable logs for release build
+-assumenosideeffects class android.util.Log {
+  public static boolean isLoggable(java.lang.String, int);
+  public static *** v(...);
+  public static *** d(...);
+  public static *** i(...);
+  public static *** e(...);
+  public static *** w(...);
+  }
 
--keep class sun.misc.Unsafe { *; }
--dontwarn java.nio.file.*
--dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
--dontwarn okio.**
+-keep class com.facebook.hermes.unicode.** { *; }
+-keep class com.facebook.jni.** { *; }

@@ -13,4 +13,8 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  loaderContainer: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
 });
