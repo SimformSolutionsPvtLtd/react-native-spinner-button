@@ -1,8 +1,9 @@
-import {
-  StyleSheet
-} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+  absoluteView: {
+    ...StyleSheet.absoluteFillObject
+  },
   defaultButtonStyle: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -16,5 +17,8 @@ export default StyleSheet.create({
   loaderContainer: {
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  padding: {
+    paddingTop: 20
   }
 });
