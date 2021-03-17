@@ -17,11 +17,17 @@ export default StyleSheet.create({
   },
   buttonStyle: {
     borderRadius: 10,
-    margin: 20,
+    margin: 5
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
   },
+  borderStyle: { 
+    borderWidth: 2, 
+    borderRadius: 10, 
+    borderColor: 'blue', 
+    borderStyle: 'solid' 
+  }
 });

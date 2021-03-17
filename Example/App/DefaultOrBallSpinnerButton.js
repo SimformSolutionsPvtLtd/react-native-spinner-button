@@ -28,6 +28,7 @@ const DefaultOrBallSpinnerButton = () => {
           gradientColorAngle={90}
           gradientRadialRadius={10}
           gradientButtonHeight={50}
+          borderStyle={styles.borderStyle}
         >
           <Text style={styles.buttonText}>Default Or Ball SpinnerButton</Text>
         </SpinnerButton>

@@ -24,7 +24,7 @@ const DotSpinnerButton = () => {
           size={10}
           spinnerType='DotIndicator'
           onPress={handleButtonPress}
-          animationType={'flipInX'}
+          animationType={'bounceIn'}
           gradientType={'Radial'}
           gradientColors={['#231557', '#44107A', '#FF1361', '#FFF800']}
           gradientColoroffset={['0%', '29%', '67%', '100%']}
@@ -35,6 +35,10 @@ const DotSpinnerButton = () => {
           radialRadiusy={"50%"}
           radialRadiusRX={"50%"}
           radialRadiusRY={"50%"}
+          animateHeight={50}
+          animateWidth={220}
+          animateRadius={10}
+          animatedDuration={700}
         >
           <Text style={styles.buttonText}>Dot SpinnerButton</Text>
         </SpinnerButton>

@@ -4,7 +4,7 @@ import LinearGradient from './LinearGradient';
 import RadialGradient from './RadialGradient';
 
 const ChildrenView = ({ 
-    buttonStyle,
+    animatedStyles,
     gradientType,
     gradientColors,
     gradientColoroffset,
@@ -25,7 +25,7 @@ const ChildrenView = ({
             <LinearGradient
                 angle={gradientColorAngle || 90}
                 children={children}
-                buttonStyle={buttonStyle}
+                animatedStyles={animatedStyles}
                 gradientColoroffset={gradientColoroffset}
                 gradientColors={gradientColors}
                 gradientRadialRadius={gradientRadialRadius}
@@ -40,7 +40,7 @@ const ChildrenView = ({
                 radialRadiusRX={radialRadiusRX}
                 radialRadiusRY={radialRadiusRY}
                 children={children}
-                buttonStyle={buttonStyle}
+                animatedStyles={animatedStyles}
                 gradientColoroffset={gradientColoroffset}
                 gradientColors={gradientColors}
                 gradientRadialRadius={gradientRadialRadius}
@@ -53,17 +53,16 @@ const ChildrenView = ({
 }
 
 ChildrenView.propTypes = {
-    buttonStyle: PropTypes.object,
     gradientType: PropTypes.string,
     gradientColors: PropTypes.array,
     gradientColoroffset: PropTypes.array,
     gradientColorAngle: PropTypes.number,
     gradientRadialRadius: PropTypes.number,
     gradientButtonHeight: PropTypes.number,
-    radialRadiusx: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
-    radialRadiusy: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
-    radialRadiusRX: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
-    radialRadiusRY: PropTypes.oneOfType(PropTypes.string, PropTypes.number),
+    radialRadiusx: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    radialRadiusy: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    radialRadiusRX: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    radialRadiusRY: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     children: PropTypes.any.isRequired
 }
 

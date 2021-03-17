@@ -28,6 +28,9 @@ const PacmanSpinnerButton = () => {
           gradientColorAngle={90}
           gradientRadialRadius={10}
           gradientButtonHeight={50}
+          animateHeight={70}
+          animateWidth={70}
+          animateRadius={35}
         >
           <Text style={styles.buttonText}>Pacman SpinnerButton</Text>
         </SpinnerButton>
