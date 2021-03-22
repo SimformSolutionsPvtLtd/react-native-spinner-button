@@ -160,6 +160,12 @@ Don't forget to set the state variable you have given to _isLoading_ prop false 
     * Its a stylesheet object.
     * This style apply when identify button disable or if network connect not available.
     * Default value: null | undefined
+29. **gradientName**
+    * Its a sample gradient name. 
+    * Default type: string
+    * Its default value is null | undefined.
+    * This properties used whenever you want to need gradient but not pass __gradientColors__, __gradientColoroffset__ and __gradientColorAngle__ properties.
+    * if you want to see color combination of [Sample gradient](https://fx-gradient-previewer.netlify.app/)
 
 ## Example
   A full working example project is here [Example](https://github.com/simformsolutions/react-native-spinner-button/tree/master/Example)

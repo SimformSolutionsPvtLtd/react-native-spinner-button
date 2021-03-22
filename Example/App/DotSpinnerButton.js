@@ -26,9 +26,7 @@ const DotSpinnerButton = () => {
           onPress={handleButtonPress}
           animationType={'bounceIn'}
           gradientType={'Radial'}
-          gradientColors={['#231557', '#44107A', '#FF1361', '#FFF800']}
-          gradientColoroffset={['0%', '29%', '67%', '100%']}
-          gradientColorAngle={90}
+          gradientName={'Night Fade'}
           gradientRadialRadius={10}
           gradientButtonHeight={50}
           radialRadiusx={"50%"}
