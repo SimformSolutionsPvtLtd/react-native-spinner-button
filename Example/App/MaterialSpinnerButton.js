@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Text } from 'react-native';
 import styles from './styles/AppStyles';
 import SpinnerButton from 'react-native-spinner-button';

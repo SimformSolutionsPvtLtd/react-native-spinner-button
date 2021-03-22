@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Text } from 'react-native';
 import styles from './styles/AppStyles';
 import SpinnerButton from 'react-native-spinner-button';
@@ -24,6 +24,10 @@ const BarSpinnerButton = () => {
           onPress={handleButtonPress}
           animationType={'flipInY'}
           indicatorCount={10}
+          animateHeight={50}
+          animateWidth={200}
+          animateRadius={10}
+          animatedDuration={700}
         >
           <Text style={styles.buttonText}>Bar SpinnerButton</Text>
         </SpinnerButton>

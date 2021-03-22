@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Text } from 'react-native';
 import styles from './styles/AppStyles';
 import SpinnerButton from 'react-native-spinner-button';
@@ -24,7 +24,19 @@ const DotSpinnerButton = () => {
           size={10}
           spinnerType='DotIndicator'
           onPress={handleButtonPress}
-          animationType={'flipInX'}
+          animationType={'bounceIn'}
+          gradientType={'Radial'}
+          gradientName={'Night Fade'}
+          gradientRadialRadius={10}
+          gradientButtonHeight={50}
+          radialRadiusx={"50%"}
+          radialRadiusy={"50%"}
+          radialRadiusRX={"50%"}
+          radialRadiusRY={"50%"}
+          animateHeight={50}
+          animateWidth={220}
+          animateRadius={10}
+          animatedDuration={700}
         >
           <Text style={styles.buttonText}>Dot SpinnerButton</Text>
         </SpinnerButton>

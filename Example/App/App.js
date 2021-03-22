@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import styles from './styles/AppStyles';
 import DefaultOrBallSpinnerButton from './DefaultOrBallSpinnerButton';
 import BarSpinnerButton from './BarSpinnerButton';
@@ -15,12 +15,12 @@ const App = () => {
   return (
     <ScrollView style={styles.safeArea}>
       <DefaultOrBallSpinnerButton />
-      <BarSpinnerButton />
       <DotSpinnerButton />
-      <MaterialSpinnerButton />
       <PacmanSpinnerButton />
-      <PulseSpinnerButton />
       <SkypeSpinnerButton />
+      <BarSpinnerButton />
+      <MaterialSpinnerButton />
+      <PulseSpinnerButton />
       <UIActivitySpinnerButton />
       <WaveSpinnerButton />
     </ScrollView>

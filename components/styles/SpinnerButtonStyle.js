@@ -1,20 +1,21 @@
-import {
-  StyleSheet
-} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  defaultButtonStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
+  buttonContainer: {
+    flex: 1
+  },
+  centerAlign: {
+    justifyContent: 'center', 
+    alignItems: 'center'
+  },
+  defaultButton: {
     height: 50,
     backgroundColor: '#25CAC6',
   },
-  defaultSpinnerContainerStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
+  absoluteView: {
+    ...StyleSheet.absoluteFillObject
   },
-  loaderContainer: {
-    alignItems: 'center',
-    justifyContent: 'center'
+  defaultGradientContainerStyle: {
+    width: '100%'
   }
 });
