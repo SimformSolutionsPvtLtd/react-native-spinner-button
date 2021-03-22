@@ -4,6 +4,7 @@ import { Animated, View } from 'react-native';
 import styles from './styles/SpinnerButtonStyle';
 import { getColorList, getAnglePercentageObject } from './utils'
 import Svg, { Defs, LinearGradient as SVGLinearGradient, Rect, Stop } from 'react-native-svg'
+import { getGradientFromName } from './utils/getAnglePercentageObject';
 
 const AnimatedRect = Animated.createAnimatedComponent(Rect);
 
@@ -14,11 +15,13 @@ const LinearGradient = ({
   gradientRadialRadius, 
   gradientColoroffset = [], 
   gradientColors = [], 
-  gradientButtonHeight
+  gradientButtonHeight,
+  gradientName
 }) => {
   const rectWidth = animatedStyles.width;  
-  const angleObj = getAnglePercentageObject(angle)
-  const colorList = getColorList(gradientColoroffset, gradientColors);
+  const gradientData = getGradientFromName(gradientName);
+  const angleObj = getAnglePercentageObject(gradientData?.angle || angle)
+  const colorList = getColorList(gradientData?.offset || gradientColoroffset, gradientData?.colors || gradientColors);
   return (
       <View style={[styles.defaultGradientContainerStyle, styles.centerAlign, { height: gradientButtonHeight }]}>
         <View style={styles.absoluteView}>
@@ -61,7 +64,8 @@ LinearGradient.propTypes = {
   gradientRadialRadius: PropTypes.number, 
   gradientColoroffset: PropTypes.array, 
   gradientColors: PropTypes.array, 
-  gradientButtonHeight: PropTypes.number
+  gradientButtonHeight: PropTypes.number,
+  gradientName: PropTypes.string
 }
 
 export default LinearGradient

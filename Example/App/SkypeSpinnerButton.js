@@ -26,7 +26,7 @@ const SkypeSpinnerButton = () => {
           }}
           onPress={handleButtonPress}
           gradientType={'Radial'}
-          gradientColors={['#231557', '#44107A', '#FF1361', '#FFF800']}
+          gradientColors={['#44107A', '#FF1361', '#dead00', '#231557']}
           gradientColoroffset={['0%', '29%', '67%', '100%']}
           gradientColorAngle={90}
           gradientRadialRadius={10}

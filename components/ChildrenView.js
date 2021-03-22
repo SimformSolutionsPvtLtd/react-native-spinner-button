@@ -15,7 +15,8 @@ const ChildrenView = ({
     radialRadiusy,
     radialRadiusRX,
     radialRadiusRY, 
-    children 
+    children,
+    gradientName
 }) => {
     const isLinearGradient = gradientType?.trim()?.toLowerCase() === 'linear'; 
     const isRadialGradient = gradientType?.trim()?.toLowerCase() === 'radial';
@@ -28,6 +29,7 @@ const ChildrenView = ({
                 animatedStyles={animatedStyles}
                 gradientColoroffset={gradientColoroffset}
                 gradientColors={gradientColors}
+                gradientName={gradientName}
                 gradientRadialRadius={gradientRadialRadius}
                 gradientButtonHeight={gradientButtonHeight}
             />
@@ -40,6 +42,7 @@ const ChildrenView = ({
                 radialRadiusRX={radialRadiusRX}
                 radialRadiusRY={radialRadiusRY}
                 children={children}
+                gradientName={gradientName}
                 animatedStyles={animatedStyles}
                 gradientColoroffset={gradientColoroffset}
                 gradientColors={gradientColors}
@@ -63,7 +66,8 @@ ChildrenView.propTypes = {
     radialRadiusy: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     radialRadiusRX: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     radialRadiusRY: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    children: PropTypes.any.isRequired
+    children: PropTypes.any.isRequired,
+    gradientName: PropTypes.string
 }
 
 export default ChildrenView;

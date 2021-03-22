@@ -46,13 +46,24 @@ const getAnglePercentageObject = (angle) => {
   return angleObj
 };
 
+const getGradientFromName = (gradientName) => {
+  if(gradientName !== null && gradientName !== undefined && gradientName !== '') {
+    const gradientJson = require('./GradientData.json');
+    const gradientObject = gradientJson.filter((item) => item.name.trim().toLowerCase() === gradientName.trim().toLowerCase());
+    if(gradientObject.length > 0) {
+      return gradientObject[0];
+    }
+  }
+  return null;
+}
+
 const getColorList = (gradientColoroffset, gradientColors) => {
-  return [
-    { offset: gradientColoroffset[0] || undefined, color: gradientColors[0] || undefined, opacity: '1' },
-    { offset: gradientColoroffset[1] || undefined, color: gradientColors[1] || undefined, opacity: '1' },
-    { offset: gradientColoroffset[2] || undefined, color: gradientColors[2] || undefined, opacity: '1' },
-    { offset: gradientColoroffset[3] || undefined, color: gradientColors[3] || undefined, opacity: '1' },
-  ];
+  const minLength = Math.min(gradientColoroffset.length, gradientColors.length);
+  const colorList = [];
+  for(i=0; i<minLength; i++) {
+    colorList.push({ offset: gradientColoroffset[i] || undefined, color: gradientColors[i] || undefined, opacity: '1' });
+  }
+  return colorList;
 };
 
-export { getColorList, getAnglePercentageObject };
+export { getGradientFromName, getColorList, getAnglePercentageObject };
