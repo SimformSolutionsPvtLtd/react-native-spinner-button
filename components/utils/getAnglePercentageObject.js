@@ -1,4 +1,4 @@
-import { getPercentageFromAngle } from './index';
+import getPercentageFromAngle from './getPercentageFromAngle';
 
 const getAnglePercentageObject = (angle) => {
   let realAngle = angle

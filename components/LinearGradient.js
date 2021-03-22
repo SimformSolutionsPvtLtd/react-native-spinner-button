@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { Animated, View } from 'react-native';
 import styles from './styles/SpinnerButtonStyle';
-import { windowWidth, getColorList, getAnglePercentageObject } from './utils'
+import { getColorList, getAnglePercentageObject } from './utils'
 import Svg, { Defs, LinearGradient as SVGLinearGradient, Rect, Stop } from 'react-native-svg'
 
+const AnimatedRect = Animated.createAnimatedComponent(Rect);
+
 const LinearGradient = ({
-  buttonStyle, 
+  animatedStyles,
   children, 
   angle, 
   gradientRadialRadius, 
@@ -14,10 +16,11 @@ const LinearGradient = ({
   gradientColors = [], 
   gradientButtonHeight
 }) => {
+  const rectWidth = animatedStyles.width;  
   const angleObj = getAnglePercentageObject(angle)
   const colorList = getColorList(gradientColoroffset, gradientColors);
   return (
-      <View style={[styles.defaultSpinnerContainerStyle, { height: gradientButtonHeight }]}>
+      <View style={[styles.defaultGradientContainerStyle, styles.centerAlign, { height: gradientButtonHeight }]}>
         <View style={styles.absoluteView}>
           <Svg height={gradientButtonHeight} width={"100%"}>
             <Defs>
@@ -35,13 +38,13 @@ const LinearGradient = ({
                   stopOpacity={value.opacity} />)}
               </SVGLinearGradient>
             </Defs>
-            <Rect
-              x={buttonStyle[0]?.margin || 10}
+            <AnimatedRect
+              x="0"
               y="0"
               rx={gradientRadialRadius}
               rY={0}
               height="100%"
-              width={windowWidth - buttonStyle[0]?.margin * 2}
+              width={rectWidth}
               fill="url(#grad)"
             />
           </Svg>
@@ -52,7 +55,7 @@ const LinearGradient = ({
 };
 
 LinearGradient.propTypes = {
-  buttonStyle: PropTypes.object,
+  animatedStyles: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   children: PropTypes.any.isRequired,
   angle: PropTypes.number,
   gradientRadialRadius: PropTypes.number, 

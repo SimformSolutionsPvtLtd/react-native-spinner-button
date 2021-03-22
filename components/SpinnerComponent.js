@@ -1,7 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { ActivityIndicator, Platform } from 'react-native';
-import { DEFAULT_COLOR_WHITE, getWaveFactorAndMode } from './utils';
 import {
   BallIndicator,
   BarIndicator,
@@ -13,6 +10,9 @@ import {
   UIActivityIndicator,
   WaveIndicator,
 } from 'react-native-indicators';
+import PropTypes from 'prop-types';
+import { ActivityIndicator, Platform } from 'react-native';
+import { DEFAULT_COLOR_WHITE, getWaveFactorAndMode } from './utils';
 
 const SpinnerComponent = ({
   height,
@@ -35,7 +35,7 @@ const SpinnerComponent = ({
       // Note: To overcome https://github.com/n4kz/react-native-indicators/issues/11 and 
       // https://github.com/n4kz/react-native-indicators/issues/6 ActivityIndicator is used in android
       if (Platform.OS === 'android') {
-        return <ActivityIndicator color={spinnerColors} size={height - 10} />;
+        return <ActivityIndicator color={spinnerColors} size={height} />;
       }
       return <MaterialIndicator color={spinnerColors} size={height - 10} />;
 
