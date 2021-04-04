@@ -13,6 +13,7 @@ const AnimatedTouchablesOpacity = Animated.createAnimatedComponent(
 
 const SpinnerButton = ({
   animationType,
+  buttonContainer,
   buttonStyle,
   borderStyle,
   spinnerColor,
@@ -57,7 +58,7 @@ const SpinnerButton = ({
   });
   
   return (
-    <View style={[styles.buttonContainer, styles.centerAlign]}>
+    <View style={[styles.buttonContainer, styles.centerAlign, buttonContainer]}>
       <AnimatedTouchablesOpacity
         activeOpacity={1}
         style={[style, animatedStyles]}
@@ -119,6 +120,7 @@ const SpinnerButton = ({
 
 SpinnerButton.propTypes = {
   animationType: PropTypes.string,
+  buttonContainer: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   buttonStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   borderStyle: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   spinnerColor: PropTypes.string,
