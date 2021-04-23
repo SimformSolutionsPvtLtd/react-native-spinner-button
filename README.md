@@ -152,7 +152,7 @@ Don't forget to set the state variable you have given to _isLoading_ prop false 
     * The flag to identify network connection and based on flag set user iteration. _false_ will render button with disable mode and _true_ will render button with normal mode.
     * Default type: boolean
     * Default value: _true_
-27. **isDisable**
+27. **disabled**
     * The flag to identify button enable/disable. _true_ will render button with disable mode and _false_ will render button with normal mode.
     * Default type: boolean
     * Default value: _false_
@@ -166,6 +166,10 @@ Don't forget to set the state variable you have given to _isLoading_ prop false 
     * Its default value is null | undefined.
     * This properties used whenever you want to need gradient but not pass __gradientColors__, __gradientColoroffset__ and __gradientColorAngle__ properties.
     * if you want to see color combination of [Sample gradient](https://fx-gradient-previewer.netlify.app/)
+30. **disableGradientColors**
+    * This is how we pass the colors we want to be displayed when button disable, colors can be passed in a different format, name, rgba, hex etc. 
+    * The colors should be ordered the way we want them to be displayed. 
+    * Eg. colors={[ “purple”, “white” ]} the gradient will move from purple to white.
 
 ## Example
   A full working example project is here [Example](https://github.com/simformsolutions/react-native-spinner-button/tree/master/Example)
