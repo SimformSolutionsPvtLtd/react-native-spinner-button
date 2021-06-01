@@ -51,10 +51,7 @@ Don't forget to set the state variable you have given to _isLoading_ prop false 
     * Default button style
       ```javascript
         defaultButtonStyle: {
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: 50,
-          backgroundColor: '#25CAC6',
+          height: 50
         }
       ```
 3. **borderStyle**
