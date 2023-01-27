@@ -9,8 +9,7 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   defaultButton: {
-    height: 50,
-    backgroundColor: '#25CAC6',
+    height: 50
   },
   absoluteView: {
     ...StyleSheet.absoluteFillObject
