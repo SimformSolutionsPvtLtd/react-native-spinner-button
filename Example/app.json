@@ -1,10 +1,4 @@
 {
-  "name": "ReactNativeSpinnerDemo",
-  "displayName": "ReactNativeSpinnerDemo",
-  "ios": {
-    "bundleIdentifier": "com.simform.reactNativeSpinnerDemo",
-  },
-  "android": {
-    "package": "com.simform.reactNativeSpinnerDemo"
-  }
+  "name": "Example",
+  "displayName": "Example"
 }
