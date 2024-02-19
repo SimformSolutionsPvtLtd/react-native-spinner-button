@@ -1,4 +1,4 @@
-# react-native-spinner-button [![npm version](https://badge.fury.io/js/react-native-spinner-button.svg)](https://badge.fury.io/js/react-native-spinner-button)
+# react-native-spinner-button [![npm version](https://badge.fury.io/js/react-native-spinner-button.svg)](https://badge.fury.io/js/react-native-spinner-button) [![Android](https://img.shields.io/badge/Platform-Android-green?logo=android)](https://www.android.com) [![iOS](https://img.shields.io/badge/Platform-iOS-green?logo=apple)](https://developer.apple.com/ios) [![MIT](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
 This is a pure javascript and react-native Button component with a Spinner embeded in it.
 In many of the react-native projects we have worked on required the button to be disabled when app is processing something on tap of that button, and a loading indicator on it or beside it, so the user can be made aware of app doing some processing.
 
@@ -6,181 +6,165 @@ From a developer perspective, it is very painful to manage two different compone
 
 By default it will render a Button and you have to pass a boolean _isLoading_ prop to it. When the _isLoading_ will be true, it will render a Spinner in place of the Button and once its false, the Button will be rendered back again.
 
-![Example of react-native-spinner-button](https://github.com/simformsolutions/react-native-spinner-button/blob/master/example.gif)
+## 🎬 Preview
 
-## Features
-* Drop in replacement for a button and indicator combo
-* Very easy to use
-* Pure javscript component
-* Consistent look and feel on both iOS and Android
-* Any spinner from [react-native-indicators](https://github.com/n4kz/react-native-indicators) can be used with most of its properties
-* The animations _fadeIn_, _flipInX_ and _flipInY_ can be used from [react-native-animatable](https://github.com/oblador/react-native-animatable)
-* Give any style to your button
+![Example of react-native-spinner-button](./assets/example.gif)
+
+## Quick Access
+
+- [Installation](#installation) | [Usage and Examples](#usage) | [Properties](#properties) | [Example Code](#example) | [License](#license)
 
 ## Getting Started
 
-```bash
-npm i react-native-spinner-button --save
+Here's how to get started with react-native-spinner-button in your React Native project:
+
+### Installation
+
+#### 1. Install the package
+
+```sh
+npm install react-native-spinner-button react-native-gradients react-native-svg
 ```
+
+Using `Yarn`:
+
+```sh
+yarn add react-native-spinner-button react-native-gradients react-native-svg
+```
+
+##### 2. Install cocoapods in the ios project
+
+```bash
+cd ios && pod install
+```
+
+
+##### Know more about [react-native-gradients](https://www.npmjs.com/package/react-native-gradients) and [react-native-svg](https://www.npmjs.com/package/react-native-svg)
+
 
 ## Usage
-```javascript
-import SpinnerButton from 'react-native-spinner-button';
-...
-// Your button component
-  <SpinnerButton
-    buttonStyle={styles.buttonStyle}
-    isLoading={this.state.defaultLoading}
-    onPress={() => {
-      this.setState({ defaultLoading: true });
-    }}
-    indicatorCount={10}
-  >
-    <Text style={styles.buttonText}>Default Or Ball SpinnerButton</Text>
-  </SpinnerButton>
-```
-Don't forget to set the state variable you have given to _isLoading_ prop false when processing is done for the button tap.
 
-## Common properties
-1. **animationType**
-    * Type of animation for the button and spinner.
-    * Default type: string
-    * Default value: null | undefined
-2. **buttonStyle**
-    * Its a stylesheet object.
-    * Default button style
-      ```javascript
-        defaultButtonStyle: {
-          height: 50
-        }
-      ```
-3. **borderStyle**
-    * Its a stylesheet object with support all basic border property like width, radius, color and style(solid, dotted and dashed) etc.
-    * If you want to need to apply border in your button then you should used like 
-      ```javascript
-        buttonBorderStyle: {
-          borderWidth: 2, 
-          borderRadius: 10, 
-          borderColor: 'blue', 
-          borderStyle: 'solid' 
-        }
-      ```
-4. **spinnerColor**
-    * The color of the Spinner.
-    * Default type: string
-    * Its default value is _white_. You can give spinnerColor in all react-native acceptable formats of color.
-5. **spinnerType**
-    * Type of the spinner.
-    * Default type: string
-    * Its default value is _BallIndicator_.
-    * These are all spinner types:
-        1. BallIndicator
-        2. BarIndicator
-        3. DotIndicator
-        4. MaterialIndicator
-        5. PacmanIndicator
-        6. PulseIndicator
-        7. SkypeIndicator
-        8. UIActivityIndicator
-        9. WaveIndicator      
-6. **isLoading**
-    * The flag to render a Button or a Spinner. _false_ will render button and _true_ will render spinner.
-    * Default type: boolean
-    * Default value: _false_
-7. **onPress**
-    * The function to execute on tap of the button.
-    * Default type: function.
-    * Default value: _nothing is executed_
-8. **indicatorCount**
-    * The count property of react-native-indicators.
-    * Default type: number
-    * Default value: null | undefined
-9. **size**
-    * The size of the Spinner.
-    * Default type: number
-    * Its default value _veries according to the spinnerType_.
-10. **spinnerOptions**
-    * An object of waveMode for WaveIndicator for WaveIndicator.
-    * Default type: Object
-    * For more details about these properties, refer [react-native-indicators](https://github.com/n4kz/react-native-indicators)
-11. **gradientType**
-    * Gradients allow you to show more than one color with a smooth transition between the colors (think Instagram logo). 
-    * They come in handy when trying to create multi-color backgrounds or custom buttons. You can have gradients in different varieties, horizontally, vertically, diagonally, etc.
-    * Currently, we are supporting two types of gradient 1.Linear Gradient & 2.Radial Gradient. 
-12. **gradientColors**
-    * This is how we pass the colors we want to be displayed, colors can be passed in a different format, name, rgba, hex etc. 
-    * The colors should be ordered the way we want them to be displayed. 
-    * Eg. colors={[ “purple”, “white” ]} the gradient will move from purple to white.
-13. **gradientColoroffset**
-    * An array of string that define where each color will stop in the gradient. 
-    * These values are also passed as a percentage of the entire gradient from 0% – 100% and have to map the corresponding colors passed in length and position. 
-    * For colors={[“red”, “yellow”, “green”}] then we’ll have locations={['0%', '50%', '80%']} with first color (red) covering '0%' – '50%', second (yellow) going from '50%' – '80%' and yellow '80%' – '100%'
-14. **gradientColorAngle**
-    * The gradient line's angle of direction. A value of 0deg is equivalent to to top; increasing values rotate clockwise from there.
-    * The angle range of 0 to 360.
-    * [More detail to read](https://www.quirksmode.org/css/images/angles.html)
-15. **gradientRadialRadius**
-    * This property used for Radial type gradient in set radius of radial gradient.
-16. **gradientButtonHeight**
-    * The size of the gradient component.
-    * Default type: number
-17. **radialRadiusx**
-    * The x coordinate of the center of the radial gradient.
-18. **radialRadiusy**
-    * The y coordinate of the center of the radial gradient.
-19. **radialRadiusRX**
-    * The horizontal radius of the radial gradient defining ellipse.
-20. **radialRadiusRY**
-    * The vertical radius of the radial gradient defining ellipse.
-21. **animatedDuration**
-    * Used for animation time, how long you have to execute your animation.
-22. **customSpinnerComponent**
-    * This props will allow you to add your own custom spinner component.
-23. **animateWidth**
-    * This props used to set component width when progress/loading will start..
-    * If you want to not set this props then identify  width and height which is minimum and then used that value.
-24. **animateHeight**
-    * This props used to set component height when progress/loading will start.
-    * If you want to not set this props then identify  width and height which is minimum and then used that value.
-25. **animateRadius**
-    * This props used to set component radius when progress/loading will start.
-    * If you want to not set this props then create circle shape.
-26. **isConnected**
-    * The flag to identify network connection and based on flag set user iteration. _false_ will render button with disable mode and _true_ will render button with normal mode.
-    * Default type: boolean
-    * Default value: _true_
-27. **disabled**
-    * The flag to identify button enable/disable. _true_ will render button with disable mode and _false_ will render button with normal mode.
-    * Default type: boolean
-    * Default value: _false_
-28. **disableStyle**
-    * Its a stylesheet object.
-    * This style apply when identify button disable or if network connect not available.
-    * Default value: null | undefined
-29. **gradientName**
-    * Its a sample gradient name. 
-    * Default type: string
-    * Its default value is null | undefined.
-    * This properties used whenever you want to need gradient but not pass __gradientColors__, __gradientColoroffset__ and __gradientColorAngle__ properties.
-    * if you want to see color combination of [Sample gradient](https://fx-gradient-previewer.netlify.app/)
-30. **disableGradientColors**
-    * This is how we pass the colors we want to be displayed when button disable, colors can be passed in a different format, name, rgba, hex etc. 
-    * The colors should be ordered the way we want them to be displayed. 
-    * Eg. colors={[ “purple”, “white” ]} the gradient will move from purple to white.
+```jsx
+import React, {useState, useCallback} from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import SpinnerButton from 'react-native-spinner-button';
+
+const App: React.FC = () => {
+  const [isLoading, setLoading] = useState<boolean>(false);
+
+  const handleButtonPress = useCallback<() => void>(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+
+  return (
+    <View style={styles.screen}>
+      {/* Your button component */}
+      <SpinnerButton
+        buttonStyle={styles.buttonStyle}
+        isLoading={isLoading}
+        onPress={() => {
+          handleButtonPress();
+        }}
+        indicatorCount={10}>
+        <Text style={styles.buttonText}>Default Or Ball SpinnerButton</Text>
+      </SpinnerButton>
+    </View>
+  );
+};
+
+export default App;
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonStyle: {
+    borderRadius: 10,
+    margin: 10,
+    backgroundColor: '#893346',
+  },
+  buttonText: {
+    fontSize: 20,
+    textAlign: 'center',
+    color: 'white',
+  },
+});
+```
+
+#### 🎬 Preview
+
+## ![Default Modal](./assets/exampleDemo.gif)
+
+
+## Properties
+
+| Props                 | Default |          Type           | Description                                                                                          |
+| :-------------------- | :-----: | :---------------------: | :--------------------------------------------------------------------------------------------------- |
+| **onPress** |    -    |   function  | The function to execute on tap of the button |
+| animationType |    null or undefined    |         string          | Type of animation for the button and spinner, For more details about properties, refer [react-native-animatable](https://www.npmjs.com/package/react-native-animatable)   |
+| buttonStyle |   {height: 50}    | array or object | Styling of button |
+| borderStyle |    -    |       array or object        | Its a stylesheet object with support all basic border property like width, radius, color and style(solid, dotted and dashed) etc |
+| spinnerColor |  white   |  string  | The color of the Spinner |
+| spinnerType  |  BallIndicator   |  string  | Type of the spinner (BallIndicator, BarIndicator, DotIndicator, MaterialIndicator, PacmanIndicator, PulseIndicator, SkypeIndicator, UIActivityIndicator, WaveIndicator) |
+| isLoading |  false   |  boolean  | The flag to render a Button or a Spinner. false will render button and true will render spinner  |
+| indicatorCount     |    8    |   number   | The count property of react-native-indicators |
+| size |    40    |   number   |  The size of the Spinner  |
+| spinnerOptions |    -    | object  | An object of waveMode for WaveIndicator for WaveIndicator. For more details about these properties, refer [react-native-indicators](https://github.com/n4kz/react-native-indicators) |
+| gradientType |    -    |   string   | Gradients allow you to show more than one color with a smooth transition between the colors (think Instagram logo). Currently, we are supporting two types of gradient (linear, radial) |
+| gradientColors  |    -    |   array   | Colors can be passed in a different format name, rgba, hex etc. The colors should be ordered the way we want them to be displayed. Eg. colors={[ “purple”, “white” ]} the gradient will move from purple to white |
+| gradientColoroffset |    -    |   array   | An array of string that define where each color will stop in the gradient. These values are also passed as a percentage of the entire gradient from 0% – 100% and have to map the corresponding colors passed in length and position. For colors={[“red”, “yellow”, “green”}] then we’ll have locations={['0%', '50%', '80%']} with first color (red) covering '0%' – '50%', second (yellow) going from '50%' – '80%' and yellow '80%' – '100%' |
+| gradientColorAngle |    -    |   number   | The gradient line's angle of direction. A value of 0deg is equivalent to to top; increasing values rotate clockwise from there. The angle range of 0 to 360. [More detail to read](https://www.quirksmode.org/css/images/angles.html) |
+| gradientRadialRadius  |    -    |   number   | This property used for Radial type gradient in set radius of radial gradient   |
+| gradientButtonHeight |    -    |   number   | The size of the gradient component |
+| radialRadiusx |    -    |  string or number   | The x coordinate of the center of the radial gradient 
+| radialRadiusy |    -    |    string or number   | The y coordinate of the center of the radial gradient |
+| radialRadiusRX  |    -    |    string or number   | The horizontal radius of the radial gradient defining ellipse  |
+| radialRadiusRY  |    -    |    string or number   | The vertical radius of the radial gradient defining ellipse  |
+| animatedDuration  |    300    |   number   | Used for animation time, how long you have to execute your animation  |
+| customSpinnerComponent  |    -    |   node   | This props will allow you to add your own custom spinner component  |
+| animateWidth  |    -    |   number   | This props used to set component width when progress/loading will start. If you want to not set this props then identify width and height which is minimum and then used that value  |
+| animateHeight  |    -    |   number   | This props used to set component height when progress/loading will start. If you want to not set this props then identify width and height which is minimum and then used that value   |
+| animateRadius  |    -    |   number   | This props used to set component radius when progress/loading will start. If you want to not set this props then create circle shape  |
+| isConnected  |    true    |   boolean   | The flag to identify network connection and based on flag set user iteration. false will render button with disable mode and true will render button with normal mode  |
+| disabled  |    false    |   boolean   | The flag to identify button enable/disable. true will render button with disable mode and false will render button with normal mode  |
+| disableStyle  |    -    |   array or object   | Its a stylesheet object. This style apply when identify button disable or if network connect not available  |
+| gradientName  |    -    |   string   | This properties used whenever you want to need gradient but not pass gradientColors, gradientColoroffset and gradientColorAngle properties |
+| disableGradientColors  |    -    |   array   | Colors can be passed in a different format name, rgba, hex etc. The colors should be ordered the way we want them to be displayed. Eg. colors={[ “purple”, “white” ]} the gradient will move from purple to white  |
+
 
 ## Example
-  A full working example project is here [Example](https://github.com/simformsolutions/react-native-spinner-button/tree/master/Example)
+  A full working example project is here [Example](./Example/App/App.tsx)
 
-## Acknowledgments and Big Thanks to
-* [react-native-indicators](https://github.com/n4kz/react-native-indicators)
-* [react-native-animatable](https://github.com/oblador/react-native-animatable)
-* [SSspinnerButton](https://github.com/simformsolutions/SSSpinnerButton)
+  ```sh
+yarn
+yarn example ios   // For ios
+yarn example android   // For Android
+```
 
-## Roadmap (What to do in next)
-1. Support inbuild different gradient with name.
-2. Support result state (InPreogress, InSuccess and InFailure).
-3. Neon style apply
-4. Button shadow 
+
+## Find this library useful? ❤️
+
+Support it by joining [stargazers](https://github.com/SimformSolutionsPvtLtd/react-native-spinner-button/stargazers) for this repository.⭐
+
+## Bugs / Feature requests / Feedbacks
+
+For bugs, feature requests, and discussion please use [GitHub Issues](https://github.com/SimformSolutionsPvtLtd/react-native-spinner-button/issues/new?labels=bug&late=BUG_REPORT.md&title=%5BBUG%5D%3A), [GitHub New Feature](https://github.com/SimformSolutionsPvtLtd/react-native-spinner-button/issues/new?labels=enhancement&late=FEATURE_REQUEST.md&title=%5BFEATURE%5D%3A), [GitHub Feedback](https://github.com/SimformSolutionsPvtLtd/react-native-spinner-button/issues/new?labels=enhancement&late=FEATURE_REQUEST.md&title=%5BFEEDBACK%5D%3A)
+
+
+## 🤝 How to Contribute
+
+We'd love to have you improve this library or fix a problem 💪
+Check out our [Contributing Guide](CONTRIBUTING.md) for ideas on contributing.
+
+## Awesome Mobile Libraries
+
+- Check out our other [available awesome mobile libraries](https://github.com/SimformSolutionsPvtLtd/Awesome-Mobile-Libraries)
+
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+- [MIT License](./LICENSE)
