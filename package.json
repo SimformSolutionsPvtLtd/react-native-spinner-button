@@ -3,7 +3,7 @@
   "version": "1.0.9",
   "description": "This is a react-native button component with a spinner. You can load a spinner or a button from the same component depending on a flag. for eg, you have a button. And on press of that button you are doing something and wants the user to show a spinner, all you have to do is use this component. You can pass along a boolean flag. The component will render a spinner if the flag is true and button if the flag is false.",
   "author": "Rupal Patel <rupalpatel0008@gmail.com>",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "test": "test",
     "create pack": "npm pack"
@@ -39,6 +39,7 @@
     "@babel/core": "^7.8.4",
     "@babel/runtime": "^7.8.4",
     "@react-native-community/eslint-config": "^1.1.0",
+    "@types/react-native-indicators": "^0.16.1",
     "babel-jest": "^25.1.0",
     "eslint": "^6.5.1",
     "jest": "^25.1.0",
