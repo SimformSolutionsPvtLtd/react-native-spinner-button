@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "declaration": true,
     "esModuleInterop": true,
+    "jsx": "react-native",
+    "lib": ["ESNext"],
+    "module": "CommonJS",
+    "noEmit": true,
+    "paths": {
+      "react-native-spinner-button": ["../src"]
+    },
+    "declaration": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "jsx": "react",
-    "lib": ["ESNext"],
-    "module": "ESNext",
     "importsNotUsedAsValues": "error",
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "Node",
@@ -19,12 +23,9 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "noEmitOnError": true,
-    "outDir": "./lib",
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "target": "ES2018"
-  },
-  "exclude": ["example/node_modules/**", "node_modules/**", "**/__tests__/*"],
-  "include": ["src","src/utils/*.json"]
   }
+}
