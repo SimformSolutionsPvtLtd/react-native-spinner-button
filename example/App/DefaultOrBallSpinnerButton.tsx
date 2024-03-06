@@ -1,5 +1,5 @@
-import React, {useCallback, useState} from 'react';
-import {StyleSheet, Text} from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { StyleSheet, Text } from 'react-native';
 import SpinnerButton from 'react-native-spinner-button';
 import styles from './styles/AppStyles';
 
@@ -20,9 +20,9 @@ const DefaultOrBallSpinnerButton: React.FC = () => {
       onPress={handleButtonPress}
       indicatorCount={10}
       gradientType={'linear'}
-      gradientColors={['#231557', '#44107A', '#FF1361', '#FFF800']}
-      gradientColoroffset={['0%', '29%', '67%', '100%']}
-      gradientColorAngle={90}
+      gradientColors={['#0186DA', '#B631A7']}
+      gradientColoroffset={['0%', '90%']}
+      gradientColorAngle={360}
       gradientRadialRadius={10}
       gradientButtonHeight={50}
       borderStyle={styles.borderStyle}>
