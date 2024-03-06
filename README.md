@@ -23,13 +23,13 @@ Here's how to get started with react-native-spinner-button in your React Native 
 #### 1. Install the package
 
 ```sh
-npm install react-native-spinner-button react-native-gradients react-native-svg
+npm install react-native-spinner-button react-native-gradients react-native-svg react-native-reanimated react-native-gesture-handler
 ```
 
 Using `Yarn`:
 
 ```sh
-yarn add react-native-spinner-button react-native-gradients react-native-svg
+yarn add react-native-spinner-button react-native-gradients react-native-svg react-native-reanimated react-native-gesture-handler
 ```
 
 ##### 2. Install cocoapods in the ios project
@@ -38,11 +38,24 @@ yarn add react-native-spinner-button react-native-gradients react-native-svg
 cd ios && pod install
 ```
 
+> Note: Make sure to add Reanimated's babel plugin to your `babel.config.js`
 
-##### Know more about [react-native-gradients](https://www.npmjs.com/package/react-native-gradients) and [react-native-svg](https://www.npmjs.com/package/react-native-svg)
+```js
+module.exports = {
+      ...
+      plugins: [
+          ...
+          'react-native-reanimated/plugin',
+      ],
+  };
+```
+
+##### Know more about [react-native-reanimated](https://www.npmjs.com/package/react-native-reanimated), [react-native-gradients](https://www.npmjs.com/package/react-native-gradients) and [react-native-svg](https://www.npmjs.com/package/react-native-svg)
 
 
 ## Usage
+
+Basic Example
 
 ```jsx
 import React, {useState, useCallback} from 'react';
@@ -96,6 +109,45 @@ const styles = StyleSheet.create({
 });
 ```
 
+Example of Ripple Effect Button
+
+```jsx
+import React from 'react';
+import {StyleSheet, Text} from 'react-native';
+import {RippleButton} from 'react-native-spinner-button';
+
+const MyRippleButton: React.FC = () => {
+  const buttonPress: () => void = () => {
+    console.log('Button Clicked');
+  };
+
+  return (
+    <RippleButton
+      style={style.btnStyle}
+      animatedDuration={2000}
+      rippleColor="rgba(0,0,0,0.4)"
+      onPress={() => {
+        buttonPress();
+      }}>
+      <Text style={style.textStyle}>RippleButton</Text>
+    </RippleButton>
+  );
+};
+
+const style = StyleSheet.create({
+  btnStyle: {
+    margin: 5,
+  },
+  textStyle: {
+    fontSize: 20,
+    textAlign: 'center',
+    color: 'white',
+  },
+});
+
+export default MyRippleButton;
+```
+
 #### 🎬 Preview
 
 ## ![Default Modal](./assets/exampleDemo.gif)
@@ -136,6 +188,16 @@ const styles = StyleSheet.create({
 | gradientName  |    -    |   string   | This properties used whenever you want to need gradient but not pass gradientColors, gradientColoroffset and gradientColorAngle properties |
 | disableGradientColors  |    -    |   array   | Colors can be passed in a different format name, rgba, hex etc. The colors should be ordered the way we want them to be displayed. Eg. colors={[ “purple”, “white” ]} the gradient will move from purple to white  |
 
+
+
+Props for Ripple Effect Button
+
+| Props                 | Default |          Type           | Description                                                                                          |
+| :-------------------- | :-----: | :---------------------: | :--------------------------------------------------------------------------------------------------- |
+| **onPress** |    -    |   function  | The function to execute on tap of the button |
+| style |    -    |         object          | Styling for button container   |
+| animatedDuration |   1000    | number | duration of ripple animation effect |
+| rippleColor |   rgba(0,0,0,0.2)    | string | color of ripple animation effect |
 
 ## Example
   A full working example project is here [Example](./Example/App/App.tsx)

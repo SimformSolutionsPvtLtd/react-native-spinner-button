@@ -1,2 +1,5 @@
-import { SpinnerButton } from './components';
+import 'react-native-gesture-handler';
+import { SpinnerButton, RippleButton } from './components';
+
 export { SpinnerButton as default };
+export { RippleButton };

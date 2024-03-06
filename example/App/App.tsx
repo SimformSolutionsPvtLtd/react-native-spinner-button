@@ -10,6 +10,7 @@ import PulseSpinnerButton from './PulseSpinnerButton';
 import SkypeSpinnerButton from './SkypeSpinnerButton';
 import UIActivitySpinnerButton from './UIActivitySpinnerButton';
 import WaveSpinnerButton from './WaveSpinnerButton';
+import MyRippleButton from './RippleButton';
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
       <SkypeSpinnerButton />
       <UIActivitySpinnerButton />
       <WaveSpinnerButton />
+      <MyRippleButton />
     </ScrollView>
   );
 };

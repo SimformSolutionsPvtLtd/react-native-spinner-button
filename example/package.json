@@ -12,7 +12,9 @@
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.72.10",
+    "react-native-gesture-handler": "^2.15.0",
     "react-native-gradients": "^2.1.1",
+    "react-native-reanimated": "^3.7.2",
     "react-native-svg": "^14.1.0"
   },
   "devDependencies": {
@@ -24,9 +26,9 @@
     "@tsconfig/react-native": "^3.0.0",
     "@types/react": "^18.0.24",
     "@types/react-test-renderer": "^18.0.0",
-    "babel-jest": "^29.2.1",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
+    "babel-jest": "^29.2.1",
     "eslint": "^8",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-simple-import-sort": "^12.0.0",
