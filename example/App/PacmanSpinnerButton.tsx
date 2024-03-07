@@ -1,5 +1,5 @@
-import React, {useCallback, useState} from 'react';
-import {StyleSheet, Text} from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { StyleSheet, Text } from 'react-native';
 import SpinnerButton from 'react-native-spinner-button';
 import styles from './styles/AppStyles';
 
@@ -20,9 +20,9 @@ const PacmanSpinnerButton: React.FC = () => {
       spinnerType="PacmanIndicator"
       onPress={handleButtonPress}
       gradientType={'linear'}
-      gradientColors={['#893346', '#1aafb8', '#bf57c3', '#FF1361']}
-      gradientColoroffset={['0%', '29%', '67%', '100%']}
-      gradientColorAngle={90}
+      gradientColors={['#363553', '#903775', '#E8458B',]}
+      gradientColoroffset={['0%', '20%', '66%']}
+      gradientColorAngle={25}
       gradientRadialRadius={10}
       gradientButtonHeight={50}
       animateHeight={70}
