@@ -1,10 +1,9 @@
+![Tree-Selection](./assets/react-native-spinner-button.png)
+
 # react-native-spinner-button [![npm version](https://badge.fury.io/js/react-native-spinner-button.svg)](https://badge.fury.io/js/react-native-spinner-button) [![Android](https://img.shields.io/badge/Platform-Android-green?logo=android)](https://www.android.com) [![iOS](https://img.shields.io/badge/Platform-iOS-green?logo=apple)](https://developer.apple.com/ios) [![MIT](https://img.shields.io/badge/License-MIT-green)](https://opensource.org/licenses/MIT)
-This is a pure javascript and react-native Button component with a Spinner embeded in it.
-In many of the react-native projects we have worked on required the button to be disabled when app is processing something on tap of that button, and a loading indicator on it or beside it, so the user can be made aware of app doing some processing.
-
-From a developer perspective, it is very painful to manage two different components: a button and a spinner for lots of buttons! So when we came accross this beautiful component [SSspinnerButton](https://github.com/simformsolutions/SSSpinnerButton), we decided to do something like that in react-native.
-
-By default it will render a Button and you have to pass a boolean _isLoading_ prop to it. When the _isLoading_ will be true, it will render a Spinner in place of the Button and once its false, the Button will be rendered back again.
+React Native Spinner Button component library provides dynamic spinner buttons and ripple effects, enriching the user experience with smooth animations and intuitive feedback
+ 
+Library is compatible with both Android and iOS platforms, offering a versatile solution to elevate your app's user interface with ease.
 
 ## 🎬 Preview
 
@@ -12,7 +11,7 @@ By default it will render a Button and you have to pass a boolean _isLoading_ pr
 
 ## Quick Access
 
-- [Installation](#installation) | [Usage and Examples](#usage) | [Properties](#properties) | [Example Code](#example) | [License](#license)
+[Installation](#installation) | [Usage and Examples](#usage) | [Properties](#properties) | [Example Code](#example) | [License](#license)
 
 ## Getting Started
 
@@ -68,7 +67,8 @@ const App: React.FC = () => {
         onPress={() => {
           handleButtonPress();
         }}
-        indicatorCount={10}>
+        indicatorCount={10}
+      >
         <Text style={styles.buttonText}>Default Or Ball SpinnerButton</Text>
       </SpinnerButton>
     </View>
@@ -96,12 +96,62 @@ const styles = StyleSheet.create({
 });
 ```
 
+
+Example of Ripple Effect Button
+
+```jsx
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import {Button} from 'react-native-spinner-button';
+
+const App: React.FC = () => {
+  const buttonPress: () => void = () => {
+    console.log('Button Clicked');
+  };
+
+  return (
+    <View style={styles.screen}>
+      <Button
+        animationType="ripple-effect"
+        onPress={buttonPress}
+        style={styles.btnStyle}
+        animatedDuration={400}>
+        <Text style={styles.textStyle}>RippleButton</Text>
+      </Button>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  btnStyle: {
+    margin: 10,
+    backgroundColor: '#893346',
+  },
+  textStyle: {
+    fontSize: 20,
+    textAlign: 'center',
+    color: 'white',
+  },
+});
+
+export default App;
+```
+
+
 #### 🎬 Preview
 
-## ![Default Modal](./assets/exampleDemo.gif)
+|       Spinner Button    |  Ripple Button    |
+| :-------: | :-----:|
+|  ![alt Default](./assets/exampleDemo1.gif)  |   ![alt Modal](./assets/exampleDemo2.gif)    |
 
 
 ## Properties
+
+Props for Spinner Button
 
 | Props                 | Default |          Type           | Description                                                                                          |
 | :-------------------- | :-----: | :---------------------: | :--------------------------------------------------------------------------------------------------- |
@@ -136,6 +186,16 @@ const styles = StyleSheet.create({
 | gradientName  |    -    |   string   | This properties used whenever you want to need gradient but not pass gradientColors, gradientColoroffset and gradientColorAngle properties |
 | disableGradientColors  |    -    |   array   | Colors can be passed in a different format name, rgba, hex etc. The colors should be ordered the way we want them to be displayed. Eg. colors={[ “purple”, “white” ]} the gradient will move from purple to white  |
 
+
+Props for Button
+
+| Props                 | Default |          Type           | Description                                                                                          |
+| :-------------------- | :-----: | :---------------------: | :--------------------------------------------------------------------------------------------------- |
+| **onPress** |    -    |   function  | The function to execute on tap of the button |
+| style |    -    |         object          | Styling for button container   |
+| animatedDuration |   500    | number | Duration of ripple animation effect |
+| rippleColor |   rgba(255, 255, 255, .25)    | string | Color of ripple animation effect
+| animationType  |  ripple-effect   |  string  | Type of the Animation (ripple-effect) 
 
 ## Example
   A full working example project is here [Example](./Example/App/App.tsx)
