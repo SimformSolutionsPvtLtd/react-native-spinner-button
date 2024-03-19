@@ -1,7 +1,7 @@
 {
   "name": "react-native-spinner-button",
-  "version": "1.0.9",
-  "description": "This is a react-native button component with a spinner. You can load a spinner or a button from the same component depending on a flag. for eg, you have a button. And on press of that button you are doing something and wants the user to show a spinner, all you have to do is use this component. You can pass along a boolean flag. The component will render a spinner if the flag is true and button if the flag is false.",
+  "version": "1.4.1",
+  "description": "React Native Spinner Button component library",
   "author": "Simform Solutions",
   "main": "lib/index",
   "types": "lib/index.d.ts",
@@ -18,7 +18,9 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-svg": "*",
+    "react-native-gradients": "*"
   },
   "repository": {
     "type": "git",
