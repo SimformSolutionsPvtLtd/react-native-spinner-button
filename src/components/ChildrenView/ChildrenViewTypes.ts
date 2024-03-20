@@ -12,7 +12,7 @@ export type ChildrenViewProps = {
   animatedStyles: AnimatedStyleProp;
   gradientType?: string;
   gradientColors?: ColorValue[];
-  gradientColoroffset?: number[];
+  gradientColoroffset?: string[];
   gradientColorAngle?: number;
   gradientRadialRadius?: number;
   gradientButtonHeight?: number;

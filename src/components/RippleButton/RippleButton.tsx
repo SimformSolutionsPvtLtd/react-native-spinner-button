@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Animated } from 'react-native';
 import useRippleButton from './useRippleButton';
-import type { RippleProps } from './types';
+import type { RippleProps } from './RippleButtonTypes';
 import styles from './RippleButtonStyles';
 
 const RippleButton: React.FC<RippleProps> = ({

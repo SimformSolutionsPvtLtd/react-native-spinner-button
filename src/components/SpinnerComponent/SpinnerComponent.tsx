@@ -13,7 +13,7 @@ import {
 import { ActivityIndicator, Platform } from 'react-native';
 import type { ColorValue } from 'react-native';
 import { DEFAULT_COLOR_WHITE, getWaveFactorAndMode } from '../../utils';
-import type { SpinnerComponentProp } from './types';
+import type { SpinnerComponentProp } from './SpinnerComponentTypes';
 
 const SpinnerComponent: React.FC<SpinnerComponentProp> = ({
   height,

@@ -1,2 +1,2 @@
 export { default as SpinnerComponent } from './SpinnerComponent';
-export * from './types';
+export * from './SpinnerComponentTypes';

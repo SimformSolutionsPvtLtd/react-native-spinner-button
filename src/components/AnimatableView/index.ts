@@ -1,2 +1,2 @@
 export { default as AnimatableView } from './AnimatableView';
-export * from './types';
+export * from './AnimatableTypes';

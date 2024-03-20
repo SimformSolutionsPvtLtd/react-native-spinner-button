@@ -4,7 +4,7 @@ import {
   GestureResponderEvent,
   LayoutChangeEvent,
 } from 'react-native';
-import type { RippleButtonProp } from './types';
+import type { RippleButtonProp } from './RippleButtonTypes';
 
 const useRippleButton = ({ onPress, animatedDuration }: RippleButtonProp) => {
   const translation: Animated.Value = useRef(new Animated.Value(0)).current;

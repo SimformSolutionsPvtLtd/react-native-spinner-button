@@ -8,7 +8,7 @@ import Svg, {
 } from 'react-native-svg';
 import { getGradientFromName, getColorList } from '../../utils';
 import type { ColorListProp, GradientDataProp } from '../../utils';
-import type { RadialGradientProps } from './types';
+import type { RadialGradientProps } from './RadialGradientTypes';
 import { SpinnerButtonStyle } from '../../styles';
 
 const AnimatedRect: Animated.AnimatedComponent<typeof Rect> =

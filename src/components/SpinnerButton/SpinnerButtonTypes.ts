@@ -1,5 +1,5 @@
 import type { StyleProp, ViewStyle, ColorValue } from 'react-native';
-import type { SpinnerType } from '../../components';
+import type { SpinnerType } from '..';
 
 export type waveModeType = 'fill' | 'outline' | undefined;
 export type SpinnerOptionsProp = {
@@ -191,7 +191,7 @@ export type SpinnerButtonProps = {
   spinnerOptions: SpinnerOptionsProp;
   gradientType: string;
   gradientColors: ColorValue[];
-  gradientColoroffset: number[];
+  gradientColoroffset: string[];
   gradientColorAngle: number;
   gradientRadialRadius: number;
   gradientButtonHeight: number;

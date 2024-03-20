@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Animatable from 'react-native-animatable';
 import { SpinnerComponent } from '../../components';
-import type { AnimatableViewProps } from './types';
+import type { AnimatableViewProps } from './AnimatableTypes';
 import { SpinnerButtonStyle } from '../../styles';
 
 const AnimatableView: React.FC<AnimatableViewProps> = ({
