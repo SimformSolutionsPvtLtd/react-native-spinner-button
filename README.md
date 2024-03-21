@@ -198,7 +198,7 @@ Props for Button
 | animationType  |  ripple-effect   |  string  | Type of the Animation (ripple-effect) 
 
 ## Example
-  A full working example project is here [Example](./Example/App/App.tsx)
+  A full working example project is here [Example](./example/App/App.tsx)
 
   ```sh
 yarn
