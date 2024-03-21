@@ -1,6 +1,6 @@
 import React from 'react';
 import { LinearGradient, RadialGradient } from '../../components';
-import type { ChildrenViewProps } from './types';
+import type { ChildrenViewProps } from './ChildrenViewTypes';
 
 const ChildrenView: React.FC<ChildrenViewProps> = ({
   animatedStyles,

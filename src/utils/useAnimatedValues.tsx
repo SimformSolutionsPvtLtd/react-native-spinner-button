@@ -5,7 +5,7 @@ import { defaulButtonHeight, defaulButtonWidth } from './SpinnerUtils';
 import type { AnimatedStyleProp } from '../components';
 
 type useAnimatedValuesProps = {
-  isLoading: Boolean;
+  isLoading: boolean;
   style: StyleProp<ViewStyle>;
   animatedDuration: number;
   animateWidth: number;

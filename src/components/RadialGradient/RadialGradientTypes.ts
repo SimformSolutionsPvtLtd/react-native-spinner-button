@@ -1,11 +1,11 @@
 import type { ColorValue } from 'react-native';
-import type { AnimatedStyleProp } from '../../components';
+import type { AnimatedStyleProp } from '..';
 
 export type RadialGradientProps = {
   animatedStyles: AnimatedStyleProp;
   children?: JSX.Element;
   gradientRadialRadius?: number;
-  gradientColoroffset?: number[];
+  gradientColoroffset?: string[];
   gradientColors?: ColorValue[];
   gradientButtonHeight?: number;
   gradientName?: string;

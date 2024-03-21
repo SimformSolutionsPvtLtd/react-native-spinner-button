@@ -1,5 +1,5 @@
 import type { ViewStyle, Animated } from 'react-native';
-import type { CommonViewProps } from '../../components';
+import type { CommonViewProps } from '..';
 
 export type AnimatedStyle = Animated.WithAnimatedValue<ViewStyle>;
 

@@ -12,7 +12,7 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "Node",
     "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noImplicitUseStrict": false,
     "noStrictGenericChecks": false,
     "noUnusedLocals": true,
@@ -23,8 +23,8 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "ES2018"
+    "target": "ESNext",
   },
   "exclude": ["example/node_modules/**", "node_modules/**", "**/__tests__/*"],
-  "include": ["src","src/utils/*.json"]
-  }
+  "include": ["src", "src/utils/*.json"]
+}

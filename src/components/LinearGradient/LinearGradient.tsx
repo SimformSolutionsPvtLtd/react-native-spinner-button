@@ -16,7 +16,7 @@ import type {
   ColorListProp,
   GradientDataProp,
 } from '../../utils';
-import type { LinearGradientProps } from './types';
+import type { LinearGradientProps } from './LinearGradientTypes';
 import { SpinnerButtonStyle } from '../../styles';
 
 const AnimatedRect: Animated.AnimatedComponent<typeof Rect> =

@@ -3,7 +3,7 @@ import { Animated, TouchableOpacity, View } from 'react-native';
 import type { StyleProp, ViewStyle, ColorValue } from 'react-native';
 import { AnimatableView, AnimatedView, ChildrenView } from '../../components';
 import { getSpinnerStyle, useAnimatedValues } from '../../utils';
-import type { SpinnerButtonProps } from './types';
+import type { SpinnerButtonProps } from './SpinnerButtonTypes';
 import { SpinnerButtonStyle } from '../../styles';
 
 const AnimatedTouchablesOpacity: Animated.AnimatedComponent<

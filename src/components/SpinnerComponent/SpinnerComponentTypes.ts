@@ -1,6 +1,6 @@
 import type { ColorValue } from 'react-native';
-import type { SpinnerType } from '../';
-import type { SpinnerOptionsProp } from '../../components';
+import type { SpinnerType } from '..';
+import type { SpinnerOptionsProp } from '..';
 
 export type SpinnerComponentProp = {
   height: number;

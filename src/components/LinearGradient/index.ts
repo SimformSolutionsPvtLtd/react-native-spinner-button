@@ -1,2 +1,2 @@
 export { default as LinearGradient } from './LinearGradient';
-export * from './types';
+export * from './LinearGradientTypes';

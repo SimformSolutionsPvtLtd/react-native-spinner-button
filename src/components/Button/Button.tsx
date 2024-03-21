@@ -1,6 +1,6 @@
 import React from 'react';
 import { RippleButton } from '../RippleButton';
-import type { ButtonProps } from './types';
+import type { ButtonProps } from './ButtonTypes';
 
 const Button: React.FC<ButtonProps> = ({
   style,

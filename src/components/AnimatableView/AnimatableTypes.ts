@@ -1,15 +1,15 @@
 import type { ColorValue } from 'react-native';
-import type { SpinnerOptionsProp } from '../../components';
+import type { SpinnerOptionsProp } from '..';
 
 export type SpinnerType =
-  | 'barindicator'
-  | 'dotindicator'
-  | 'materialindicator'
-  | 'pacmanindicator'
-  | 'pulseindicator'
-  | 'skypeindicator'
-  | 'uiactivityindicator'
-  | 'waveindicator';
+  | 'BarIndicator'
+  | 'DotIndicator'
+  | 'MaterialIndicator'
+  | 'PacmanIndicator'
+  | 'PulseIndicator'
+  | 'SkypeIndicator'
+  | 'UIActivityIndicator'
+  | 'WaveIndicator';
 
 export type CommonViewProps = {
   children: JSX.Element;
