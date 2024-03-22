@@ -6,7 +6,7 @@ export type SpinnerComponentProp = {
   height: number;
   spinnerColor: ColorValue;
   spinnerType: SpinnerType;
-  indicatorCount: number;
+  indicatorCount?: number;
   size: number;
-  spinnerOptions: SpinnerOptionsProp;
+  spinnerOptions?: SpinnerOptionsProp;
 };

@@ -2,7 +2,11 @@ import React from 'react';
 import { Animated, TouchableOpacity, View } from 'react-native';
 import type { StyleProp, ViewStyle, ColorValue } from 'react-native';
 import { AnimatableView, AnimatedView, ChildrenView } from '../../components';
-import { getSpinnerStyle, useAnimatedValues } from '../../utils';
+import {
+  DEFAULT_COLOR_WHITE,
+  getSpinnerStyle,
+  useAnimatedValues,
+} from '../../utils';
 import type { SpinnerButtonProps } from './SpinnerButtonTypes';
 import { SpinnerButtonStyle } from '../../styles';
 
@@ -15,12 +19,12 @@ const SpinnerButton: React.FC<SpinnerButtonProps> = ({
   buttonContainer,
   buttonStyle,
   borderStyle,
-  spinnerColor,
-  spinnerType,
+  spinnerColor = DEFAULT_COLOR_WHITE,
+  spinnerType = 'BallIndicator',
   onPress,
   children,
   indicatorCount,
-  size,
+  size = 16,
   spinnerOptions,
   gradientName,
   gradientType,
@@ -38,7 +42,7 @@ const SpinnerButton: React.FC<SpinnerButtonProps> = ({
   animateWidth,
   animateHeight,
   animateRadius,
-  isLoading,
+  isLoading = false,
   isConnected = true,
   disabled = false,
   disableStyle,
@@ -47,7 +51,7 @@ const SpinnerButton: React.FC<SpinnerButtonProps> = ({
   const isDisable: boolean = disabled || !isConnected;
   const isAnimationType: boolean =
     animationType !== null && animationType !== undefined;
-  const gradientColor: ColorValue[] = isDisable
+  const gradientColor: ColorValue[] | undefined = isDisable
     ? disableGradientColors || gradientColors
     : gradientColors;
   const style: StyleProp<ViewStyle> = [
@@ -100,7 +104,7 @@ const SpinnerButton: React.FC<SpinnerButtonProps> = ({
           gradientName={gradientName}
           children={
             <>
-              {isAnimationType && (
+              {isAnimationType && typeof animationType === 'string' && (
                 <AnimatableView
                   animationType={animationType}
                   children={children}

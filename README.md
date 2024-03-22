@@ -163,7 +163,7 @@ Props for Spinner Button
 | spinnerType  |  BallIndicator   |  string  | Type of the spinner (BallIndicator, BarIndicator, DotIndicator, MaterialIndicator, PacmanIndicator, PulseIndicator, SkypeIndicator, UIActivityIndicator, WaveIndicator) |
 | isLoading |  false   |  boolean  | The flag to render a Button or a Spinner. false will render button and true will render spinner  |
 | indicatorCount     |    8    |   number   | The count property of react-native-indicators |
-| size |    40    |   number   |  The size of the Spinner  |
+| size |    16    |   number   |  The size of the Dot in DotIndicator  |
 | spinnerOptions |    -    | object  | An object of waveMode for WaveIndicator for WaveIndicator. For more details about these properties, refer [react-native-indicators](https://github.com/n4kz/react-native-indicators) |
 | gradientType |    -    |   string   | Gradients allow you to show more than one color with a smooth transition between the colors (think Instagram logo). Currently, we are supporting two types of gradient (linear, radial) |
 | gradientColors  |    -    |   array   | Colors can be passed in a different format name, rgba, hex etc. The colors should be ordered the way we want them to be displayed. Eg. colors={[ “purple”, “white” ]} the gradient will move from purple to white |
