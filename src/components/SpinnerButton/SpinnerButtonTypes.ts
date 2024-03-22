@@ -7,6 +7,8 @@ export type SpinnerOptionsProp = {
   waveMode?: waveModeType;
 };
 
+export type GradientType = 'Linear' | 'Radial';
+
 export type GradientNames =
   | 'Warm Flame'
   | 'Night Fade'
@@ -177,37 +179,71 @@ export type GradientNames =
   | 'Fabled Sunset'
   | 'Perfect Blue';
 
-export type SpinnerButtonProps = {
-  animationType: string;
-  buttonContainer: StyleProp<ViewStyle>;
-  buttonStyle: StyleProp<ViewStyle>;
-  borderStyle: StyleProp<ViewStyle>;
-  spinnerColor: ColorValue;
-  spinnerType: SpinnerType;
+export interface CommonOptionalProps {
+  animationType?: string;
+  buttonContainer?: StyleProp<ViewStyle>;
+  buttonStyle?: StyleProp<ViewStyle>;
+  borderStyle?: StyleProp<ViewStyle>;
+  spinnerColor?: ColorValue;
+  spinnerType?: SpinnerType;
+  indicatorCount?: number;
+  size?: number;
+  spinnerOptions?: SpinnerOptionsProp;
+  gradientColors?: ColorValue[];
+  gradientColoroffset?: string[];
+  gradientColorAngle?: number;
+  animatedDuration?: number;
+  customSpinnerComponent?: JSX.Element;
+  animateWidth?: number;
+  animateHeight?: number;
+  animateRadius?: number;
+  disabled?: boolean;
+  isLoading?: boolean;
+  isConnected?: boolean;
+  disableStyle?: StyleProp<ViewStyle>;
+  disableGradientColors?: ColorValue[];
+  gradientName?: GradientNames;
+  radialRadiusx?: string | number;
+  radialRadiusy?: string | number;
+  radialRadiusRX?: string | number;
+  radialRadiusRY?: string | number;
+  gradientRadialRadius?: number;
+  gradientButtonHeight?: number;
+}
+
+export interface SpinnerButtonBaseProps extends CommonOptionalProps {
   onPress: () => void;
   children: JSX.Element;
-  indicatorCount: number;
-  size: number;
-  spinnerOptions: SpinnerOptionsProp;
-  gradientType: string;
-  gradientColors: ColorValue[];
-  gradientColoroffset: string[];
-  gradientColorAngle: number;
+}
+
+export interface LinearGradientBaseProps extends CommonOptionalProps {
+  gradientType: 'Linear';
   gradientRadialRadius: number;
   gradientButtonHeight: number;
+}
+
+export interface RadialGradientBaseProps extends CommonOptionalProps {
+  gradientType: 'Radial';
   radialRadiusx: string | number;
   radialRadiusy: string | number;
   radialRadiusRX: string | number;
   radialRadiusRY: string | number;
-  animatedDuration: number;
-  customSpinnerComponent?: JSX.Element;
-  animateWidth: number;
-  animateHeight: number;
-  animateRadius: number;
-  disabled: boolean;
-  isLoading: boolean;
-  isConnected: boolean;
-  disableStyle: StyleProp<ViewStyle>;
-  disableGradientColors: ColorValue[];
-  gradientName: GradientNames;
-};
+  gradientRadialRadius: number;
+  gradientButtonHeight: number;
+}
+
+export interface BasicSpinnerButtonBaseProps extends CommonOptionalProps {
+  gradientType?: never;
+}
+
+type BasicSpinnerButtonProps = SpinnerButtonBaseProps &
+  BasicSpinnerButtonBaseProps;
+
+type LinearGradientProps = SpinnerButtonBaseProps & LinearGradientBaseProps;
+
+type RadialGradientProps = SpinnerButtonBaseProps & RadialGradientBaseProps;
+
+export type SpinnerButtonProps =
+  | BasicSpinnerButtonProps
+  | LinearGradientProps
+  | RadialGradientProps;

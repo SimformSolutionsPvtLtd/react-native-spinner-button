@@ -18,9 +18,6 @@ const SkypeSpinnerButton: React.FC = () => {
       buttonStyle={[styles.buttonStyle, style.btnStyle]}
       isLoading={isLoading}
       spinnerType="SkypeIndicator"
-      spinnerOptions={{
-        maxScale: 2,
-      }}
       onPress={handleButtonPress}
       gradientType={'Radial'}
       gradientColors={['#AAB6FB', '#30238B']}

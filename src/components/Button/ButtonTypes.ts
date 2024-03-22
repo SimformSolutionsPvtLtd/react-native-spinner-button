@@ -4,7 +4,7 @@ export type AnimationType = 'ripple-effect';
 
 export type ButtonProps = {
   style?: StyleProp<ViewStyle>;
-  onPress?: () => void;
+  onPress: () => void;
   children: JSX.Element;
   animatedDuration?: number;
   rippleColor?: string;

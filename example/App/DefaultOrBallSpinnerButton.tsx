@@ -19,7 +19,7 @@ const DefaultOrBallSpinnerButton: React.FC = () => {
       isLoading={isLoading}
       onPress={handleButtonPress}
       indicatorCount={10}
-      gradientType={'linear'}
+      gradientType={'Linear'}
       gradientColors={['#0186DA', '#B631A7']}
       gradientColoroffset={['0%', '90%']}
       gradientColorAngle={360}

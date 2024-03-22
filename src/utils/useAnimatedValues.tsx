@@ -8,9 +8,9 @@ type useAnimatedValuesProps = {
   isLoading: boolean;
   style: StyleProp<ViewStyle>;
   animatedDuration: number;
-  animateWidth: number;
-  animateHeight: number;
-  animateRadius: number;
+  animateWidth?: number;
+  animateHeight?: number;
+  animateRadius?: number;
 };
 
 type Size = {

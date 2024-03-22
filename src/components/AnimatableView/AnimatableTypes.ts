@@ -9,7 +9,8 @@ export type SpinnerType =
   | 'PulseIndicator'
   | 'SkypeIndicator'
   | 'UIActivityIndicator'
-  | 'WaveIndicator';
+  | 'WaveIndicator'
+  | 'BallIndicator';
 
 export type CommonViewProps = {
   children: JSX.Element;
@@ -18,8 +19,8 @@ export type CommonViewProps = {
   size: number;
   spinnerColor: ColorValue;
   spinnerType: SpinnerType;
-  indicatorCount: number;
-  spinnerOptions: SpinnerOptionsProp;
+  indicatorCount?: number;
+  spinnerOptions?: SpinnerOptionsProp;
 };
 
 export type AnimatableViewProps = CommonViewProps & {

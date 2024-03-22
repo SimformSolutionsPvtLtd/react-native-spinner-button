@@ -19,7 +19,7 @@ const PacmanSpinnerButton: React.FC = () => {
       isLoading={isLoading}
       spinnerType="PacmanIndicator"
       onPress={handleButtonPress}
-      gradientType={'linear'}
+      gradientType={'Linear'}
       gradientColors={['#363553', '#903775', '#E8458B',]}
       gradientColoroffset={['0%', '20%', '66%']}
       gradientColorAngle={25}
