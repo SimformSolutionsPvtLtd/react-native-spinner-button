@@ -151,51 +151,51 @@ export default App;
 
 ## Properties
 
-Props for Spinner Button
+Props for the spinner button
 
 | Props                 | Default |          Type           | Description                                                                                          |
 | :-------------------- | :-----: | :---------------------: | :--------------------------------------------------------------------------------------------------- |
-| **onPress** |    -    |   function  | The function to execute on tap of the button |
+| **onPress** |    -    |   function  | The function to execute upon tapping the button |
 | animationType |    null or undefined    |         string          | Type of animation for the button and spinner, For more details about properties, refer [react-native-animatable](https://www.npmjs.com/package/react-native-animatable)   |
-| buttonStyle |   {height: 50}    | array or object | Styling of button |
-| borderStyle |    -    |       array or object        | Its a stylesheet object with support all basic border property like width, radius, color and style(solid, dotted and dashed) etc |
-| spinnerColor |  white   |  string  | The color of the Spinner |
-| spinnerType  |  BallIndicator   |  string  | Type of the spinner (BallIndicator, BarIndicator, DotIndicator, MaterialIndicator, PacmanIndicator, PulseIndicator, SkypeIndicator, UIActivityIndicator, WaveIndicator) |
-| isLoading |  false   |  boolean  | The flag to render a Button or a Spinner. false will render button and true will render spinner  |
+| buttonStyle |   {height: 50}    | array or object | Button styling |
+| borderStyle |    -    |       array or object        | It's a stylesheet object supporting all basic border properties like width, radius, color, and style (solid, dotted, and dashed), etc |
+| spinnerColor |  white   |  string  | The color of the spinner |
+| spinnerType  |  BallIndicator   |  string  | Type of the spinner: BallIndicator, BarIndicator, DotIndicator, MaterialIndicator, PacmanIndicator, PulseIndicator, SkypeIndicator, UIActivityIndicator, WaveIndicator. |
+| isLoading |  false   |  boolean  | The flag to render a button or a spinner. false will render a button, and true will render a spinner  |
 | indicatorCount     |    8    |   number   | The count property of react-native-indicators |
-| size |    16    |   number   |  The size of the Dot in DotIndicator  |
-| spinnerOptions |    -    | object  | An object of waveMode for WaveIndicator for WaveIndicator. For more details about these properties, refer [react-native-indicators](https://github.com/n4kz/react-native-indicators) |
-| gradientType |    -    |   string   | Gradients allow you to show more than one color with a smooth transition between the colors (think Instagram logo). Currently, we are supporting two types of gradient (linear, radial) |
-| gradientColors  |    -    |   array   | Colors can be passed in a different format name, rgba, hex etc. The colors should be ordered the way we want them to be displayed. Eg. colors={[ “purple”, “white” ]} the gradient will move from purple to white |
-| gradientColoroffset |    -    |   array   | An array of string that define where each color will stop in the gradient. These values are also passed as a percentage of the entire gradient from 0% – 100% and have to map the corresponding colors passed in length and position. For colors={[“red”, “yellow”, “green”}] then we’ll have locations={['0%', '50%', '80%']} with first color (red) covering '0%' – '50%', second (yellow) going from '50%' – '80%' and yellow '80%' – '100%' |
-| gradientColorAngle |    -    |   number   | The gradient line's angle of direction. A value of 0deg is equivalent to to top; increasing values rotate clockwise from there. The angle range of 0 to 360. [More detail to read](https://www.quirksmode.org/css/images/angles.html) |
-| gradientRadialRadius  |    -    |   number   | This property used for Radial type gradient in set radius of radial gradient   |
+| size |    16    |   number   |  The size of the dot in DotIndicator  |
+| spinnerOptions |    -    | object  | An object of waveMode for WaveIndicator. For more details about these properties, refer [react-native-indicators](https://github.com/n4kz/react-native-indicators) |
+| gradientType |    -    |   string   | Gradients allow you to display more than one color with a smooth transition between the colors (think Instagram logo). Currently, we support two types of gradients: linear and radial |
+| gradientColors  |    -    |   array   | Colors can be passed in different formats such as name, RGBA, hex, etc. The colors should be ordered in the way we want them to be displayed. For example, colors={[ "purple", "white" ]}, the gradient will transition from purple to white |
+| gradientColoroffset |    -    |   array   | An array of strings that defines where each color will stop in the gradient. These values are passed as a percentage of the entire gradient from 0% to 100% and must correspond to the colors passed in length and position. For example, with colors={[“red”, “yellow”, “green”]}, then we’ll have locations={['0%', '50%', '80%']}, with the first color (red) covering '0%' – '50%', the second (yellow) going from '50%' – '80%', and the third (green) from '80%' – '100%' |
+| gradientColorAngle |    -    |   number   | The gradient line's angle of direction. A value of 0deg is equivalent to the top; increasing values rotate clockwise from there. The angle range is from 0 to 360 degrees [More detail to read](https://www.quirksmode.org/css/images/angles.html) |
+| gradientRadialRadius  |    -    |   number   | This property is used for radial type gradients to set the radius of the radial gradient   |
 | gradientButtonHeight |    -    |   number   | The size of the gradient component |
-| radialRadiusx |    -    |  string or number   | The x coordinate of the center of the radial gradient 
-| radialRadiusy |    -    |    string or number   | The y coordinate of the center of the radial gradient |
-| radialRadiusRX  |    -    |    string or number   | The horizontal radius of the radial gradient defining ellipse  |
-| radialRadiusRY  |    -    |    string or number   | The vertical radius of the radial gradient defining ellipse  |
-| animatedDuration  |    300    |   number   | Used for animation time, how long you have to execute your animation  |
-| customSpinnerComponent  |    -    |   node   | This props will allow you to add your own custom spinner component  |
-| animateWidth  |    -    |   number   | This props used to set component width when progress/loading will start. If you want to not set this props then identify width and height which is minimum and then used that value  |
-| animateHeight  |    -    |   number   | This props used to set component height when progress/loading will start. If you want to not set this props then identify width and height which is minimum and then used that value   |
-| animateRadius  |    -    |   number   | This props used to set component radius when progress/loading will start. If you want to not set this props then create circle shape  |
-| isConnected  |    true    |   boolean   | The flag to identify network connection and based on flag set user iteration. false will render button with disable mode and true will render button with normal mode  |
-| disabled  |    false    |   boolean   | The flag to identify button enable/disable. true will render button with disable mode and false will render button with normal mode  |
-| disableStyle  |    -    |   array or object   | Its a stylesheet object. This style apply when identify button disable or if network connect not available  |
-| gradientName  |    -    |   string   | This properties used whenever you want to need gradient but not pass gradientColors, gradientColoroffset and gradientColorAngle properties |
-| disableGradientColors  |    -    |   array   | Colors can be passed in a different format name, rgba, hex etc. The colors should be ordered the way we want them to be displayed. Eg. colors={[ “purple”, “white” ]} the gradient will move from purple to white  |
+| radialRadiusx |    -    |  string or number   | The x-coordinate of the center of the radial gradient
+| radialRadiusy |    -    |    string or number   | The y-coordinate of the center of the radial gradient |
+| radialRadiusRX  |    -    |    string or number   | The horizontal radius of the radial gradient defining the ellipse  |
+| radialRadiusRY  |    -    |    string or number   | The vertical radius of the radial gradient defining the ellipse  |
+| animatedDuration  |    300    |   number   | This property is used to define the duration of the animation, indicating how long it will take to execute the animation  |
+| customSpinnerComponent  |    -    |   node   | This prop allows you to add your own custom spinner component  |
+| animateWidth  |    -    |   number   | This prop is used to set the component width when the progress/loading starts. If you do not set this prop, it will identify the width and height which are minimum and then use that value  |
+| animateHeight  |    -    |   number   | This prop is used to set the component height when the progress/loading starts. If you do not set this prop, it will identify the width and height which are minimum and then use that value   |
+| animateRadius  |    -    |   number   | This prop is used to set the component radius when the progress/loading starts. If you do not set this prop, it will create a circle shape by default  |
+| isConnected  |    true    |   boolean   | The flag is used to identify the network connection, and based on the flag, the user iteration is set. false will render the button in disabled mode, and true will render the button in normal mode  |
+| disabled  |    false    |   boolean   | The flag to identify button enable/disable. true will render the button in disabled mode, and false will render the button in normal mode  |
+| disableStyle  |    -    |   array or object   | It's a stylesheet object. This style applies when identifying the button as disabled or if network connection is not available  |
+| gradientName  |    -    |   string   | These properties are used whenever you want to use a gradient but do not pass the gradientColors, gradientColorOffset, and gradientColorAngle properties |
+| disableGradientColors  |    -    |   array   | Colors can be passed in different formats such as names, RGBA, hex, etc. The colors should be ordered in the way we want them to be displayed. For example, with colors={[ "purple", "white" ]}, the gradient will transition from purple to white  |
 
 
-Props for Button
+Props for the button
 
 | Props                 | Default |          Type           | Description                                                                                          |
 | :-------------------- | :-----: | :---------------------: | :--------------------------------------------------------------------------------------------------- |
-| **onPress** |    -    |   function  | The function to execute on tap of the button |
-| style |    -    |         object          | Styling for button container   |
-| animatedDuration |   500    | number | Duration of ripple animation effect |
-| rippleColor |   rgba(255, 255, 255, .25)    | string | Color of ripple animation effect
-| animationType  |  ripple-effect   |  string  | Type of the Animation (ripple-effect) 
+| **onPress** |    -    |   function  | The function to execute upon tapping the button |
+| style |    -    |         object          | Styling for the button container   |
+| animatedDuration |   500    | number | Duration of the ripple animation effect |
+| rippleColor |   rgba(255, 255, 255, .25)    | string | Color of the ripple animation effect
+| animationType  |  ripple-effect   |  string  | Type of the animation: ripple-effect |
 
 ## Example
   A full working example project is here [Example](./example/App/App.tsx)
