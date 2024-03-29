@@ -1,4 +1,5 @@
 import type { Animated, ColorValue } from 'react-native';
+import type { GradientType } from '../SpinnerButton';
 
 export type AnimatedStyleProp = {
   width: Animated.AnimatedInterpolation<number>;
@@ -10,7 +11,7 @@ export type AnimatedStyleProp = {
 
 export type ChildrenViewProps = {
   animatedStyles: AnimatedStyleProp;
-  gradientType?: string;
+  gradientType?: GradientType;
   gradientColors?: ColorValue[];
   gradientColoroffset?: string[];
   gradientColorAngle?: number;
