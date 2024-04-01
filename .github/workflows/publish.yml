@@ -11,11 +11,11 @@ jobs:
         runs-on: macos-11
         steps:
             - name: 📚 checkout
-              uses: actions/checkout@v2.4.2
+              uses: actions/checkout@v4
             - name: 🟢 node
-              uses: actions/setup-node@v3.3.0
+              uses: actions/setup-node@v4
               with:
-                  node-version: 16
+                  node-version: 18
                   registry-url: https://registry.npmjs.org
             - name: 🚀 Build & Publish
               run: yarn install && yarn build && yarn publish --access public
