@@ -1,6 +1,6 @@
 {
   "name": "react-native-spinner-button",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "React Native Spinner Button component library",
   "author": "Simform Solutions",
   "main": "lib/index",
