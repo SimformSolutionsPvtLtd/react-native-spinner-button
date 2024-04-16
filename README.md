@@ -102,7 +102,7 @@ Example of Ripple Effect Button
 ```jsx
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Button} from 'react-native-spinner-button';
+import SpinnerButton from 'react-native-spinner-button';
 
 const App: React.FC = () => {
   const buttonPress: () => void = () => {
@@ -111,13 +111,13 @@ const App: React.FC = () => {
 
   return (
     <View style={styles.screen}>
-      <Button
+      <SpinnerButton
         animationType="ripple-effect"
         onPress={buttonPress}
-        style={styles.btnStyle}
+        buttonStyle={styles.btnStyle}
         animatedDuration={400}>
         <Text style={styles.textStyle}>RippleButton</Text>
-      </Button>
+      </SpinnerButton>
     </View>
   );
 };
@@ -156,7 +156,7 @@ Props for the spinner button
 | Props                 | Default |          Type           | Description                                                                                          |
 | :-------------------- | :-----: | :---------------------: | :--------------------------------------------------------------------------------------------------- |
 | **onPress** |    -    |   function  | The function to execute upon tapping the button |
-| animationType |    null or undefined    |         string          | Type of animation for the button and spinner, For more details about properties, refer [react-native-animatable](https://www.npmjs.com/package/react-native-animatable)   |
+| animationType |    null or undefined    |         string          | Type of animation for the button and spinner, For more details about properties, refer [react-native-animatable](https://www.npmjs.com/package/react-native-animatable) and also support "ripple-effect"  |
 | buttonStyle |   {height: 50}    | array or object | Button styling |
 | borderStyle |    -    |       array or object        | It's a stylesheet object supporting all basic border properties like width, radius, color, and style (solid, dotted, and dashed), etc |
 | spinnerColor |  white   |  string  | The color of the spinner |
@@ -185,17 +185,7 @@ Props for the spinner button
 | disableStyle  |    -    |   array or object   | It's a stylesheet object. This style applies when identifying the button as disabled or if network connection is not available  |
 | gradientName  |    -    |   string   | These properties are used whenever you want to use a gradient but do not pass the gradientColors, gradientColorOffset, and gradientColorAngle properties |
 | disableGradientColors  |    -    |   array   | Colors can be passed in different formats such as names, RGBA, hex, etc. The colors should be ordered in the way we want them to be displayed. For example, with colors={[ "purple", "white" ]}, the gradient will transition from purple to white  |
-
-
-Props for the button
-
-| Props                 | Default |          Type           | Description                                                                                          |
-| :-------------------- | :-----: | :---------------------: | :--------------------------------------------------------------------------------------------------- |
-| **onPress** |    -    |   function  | The function to execute upon tapping the button |
-| style |    -    |         object          | Styling for the button container   |
-| animatedDuration |   500    | number | Duration of the ripple animation effect |
 | rippleColor |   rgba(255, 255, 255, .25)    | string | Color of the ripple animation effect
-| animationType  |  ripple-effect   |  string  | Type of the animation: ripple-effect |
 
 ## Example
   A full working example project is here [Example](./example/App/App.tsx)
