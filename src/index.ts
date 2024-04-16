@@ -1,3 +1,2 @@
-import { SpinnerButton, Button } from './components';
+import { SpinnerButton } from './components';
 export { SpinnerButton as default };
-export { Button };
