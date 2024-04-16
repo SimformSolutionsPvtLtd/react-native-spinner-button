@@ -6,6 +6,7 @@ import {
   DEFAULT_COLOR_WHITE,
   getSpinnerStyle,
   useAnimatedValues,
+  useRippleButton
 } from '../../utils';
 import type { SpinnerButtonProps } from './SpinnerButtonTypes';
 import { SpinnerButtonStyle } from '../../styles';
@@ -37,6 +38,7 @@ const SpinnerButton: React.FC<SpinnerButtonProps> = ({
   radialRadiusy,
   radialRadiusRX,
   radialRadiusRY,
+  rippleColor = 'rgba(255, 255, 255, .25)',
   animatedDuration = 300,
   customSpinnerComponent,
   animateWidth,
@@ -74,6 +76,11 @@ const SpinnerButton: React.FC<SpinnerButtonProps> = ({
     animateWidth,
     animateHeight,
     animateRadius,
+    animationType
+  });
+  const { handleRipplePress, handleRippleLayout, animatedStyle } = useRippleButton({
+    onPress,
+    animatedDuration,
   });
 
   return (
@@ -104,7 +111,31 @@ const SpinnerButton: React.FC<SpinnerButtonProps> = ({
           gradientName={gradientName}
           children={
             <>
-              {isAnimationType && typeof animationType === 'string' && (
+              {isAnimationType && animationType === 'ripple-effect' && (
+                <TouchableOpacity
+                  activeOpacity={1}
+                  onPress={handleRipplePress}
+                  style={SpinnerButtonStyle.rippleButtonStyle}
+                >
+                  <View
+                    style={[SpinnerButtonStyle.button, style, SpinnerButtonStyle.animatedViewContainer]}
+                    pointerEvents="none"
+                    onLayout={handleRippleLayout}>
+                    {children}
+                    <Animated.View
+                      style={[
+                        // eslint-disable-next-line react-native/no-inline-styles
+                        {
+                          backgroundColor: rippleColor,
+                          position: 'absolute',
+                          ...animatedStyle,
+                        },
+                      ]}
+                    />
+                  </View>
+                </TouchableOpacity>
+              )}
+              {isAnimationType && typeof animationType === 'string' && animationType !== 'ripple-effect' && (
                 <AnimatableView
                   animationType={animationType}
                   children={children}

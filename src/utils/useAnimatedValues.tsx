@@ -11,6 +11,7 @@ type useAnimatedValuesProps = {
   animateWidth?: number;
   animateHeight?: number;
   animateRadius?: number;
+  animationType?: string;
 };
 
 type Size = {
@@ -27,6 +28,7 @@ const useAnimatedValues = ({
   animateWidth,
   animateHeight,
   animateRadius,
+  animationType
 }: useAnimatedValuesProps) => {
   const [size, setSize] = useState<Size | null>(null);
   const defaultStyle: ViewStyle = StyleSheet.flatten(style);
@@ -89,19 +91,19 @@ const useAnimatedValues = ({
   const animatedWidthValue: Animated.AnimatedInterpolation<number> =
     animatedLoadingValue.interpolate({
       inputRange: [0, 1],
-      outputRange: [defaultWidth, animatedWidth],
+      outputRange: [defaultWidth, animationType === 'ripple-effect' ? defaultWidth : animatedWidth],
     });
 
   const animatedHeightValue: Animated.AnimatedInterpolation<number> =
     animatedLoadingValue.interpolate({
       inputRange: [0, 1],
-      outputRange: [defaultHeight, animatedHeight],
+      outputRange: [defaultHeight, animationType === 'ripple-effect' ? defaultHeight : animatedHeight],
     });
 
   const animatedBorderValue: Animated.AnimatedInterpolation<number> =
     animatedLoadingValue.interpolate({
       inputRange: [0, 1],
-      outputRange: [defaultRadius, animatedRadius],
+      outputRange: [defaultRadius, animationType === 'ripple-effect' ? defaultRadius : animatedRadius],
     });
 
   const animatedOpacityHide: Animated.AnimatedInterpolation<number> =

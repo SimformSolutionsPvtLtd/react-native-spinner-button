@@ -207,6 +207,7 @@ export interface CommonOptionalProps {
   radialRadiusy?: string | number;
   radialRadiusRX?: string | number;
   radialRadiusRY?: string | number;
+  rippleColor?: string;
   gradientRadialRadius?: number;
   gradientButtonHeight?: number;
 }
